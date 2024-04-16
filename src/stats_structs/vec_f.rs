@@ -27,6 +27,10 @@ impl VecF {
     return Self{data};
   }
 
+  pub fn get(&self, index: usize) -> f32 {
+    return self.data[index];
+  }
+
   // euclidean distance between two vecfs
   pub fn euclid_distance(&self, other: &Self) -> f32 {
     assert_eq!(self.data.len(), other.data.len());
@@ -117,6 +121,20 @@ impl Add for VecF {
   }
 }
 
+impl Add for &VecF {
+  type Output = VecF;
+  fn add(self, other: Self) -> VecF {
+    assert_eq!(self.data.len(), other.data.len());
+
+    return VecF::from(
+      (0..self.data.len())
+        .into_iter()
+        .map(|i| self.data[i] + other.data[i])
+        .collect::<Vec<f32>>()
+    );
+  }
+}
+
 impl Sub for VecF {
   type Output = Self;
   fn sub(mut self, other: Self) -> Self {
@@ -127,6 +145,20 @@ impl Sub for VecF {
       self.data[index] -= other.data[index];
     }
     return self;
+  }
+}
+
+impl Sub for &VecF {
+  type Output = VecF;
+  fn sub(self, other: Self) -> VecF {
+    assert_eq!(self.data.len(), other.data.len());
+
+    return VecF::from(
+      (0..self.data.len())
+        .into_iter()
+        .map(|i| self.data[i] - other.data[i])
+        .collect::<Vec<f32>>()
+    );
   }
 }
 

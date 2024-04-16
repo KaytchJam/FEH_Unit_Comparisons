@@ -128,7 +128,7 @@ impl<'a> PartialEq for UnitDistance<'a> {
 
 impl<'a> PartialOrd for UnitDistance<'a> {
   fn partial_cmp(&self, other: &Self) -> Option<cmp::Ordering> {
-      return self.1.partial_cmp(&other.1).map(|f| f.reverse());
+      return self.1.partial_cmp(&other.1);
   }
 }
 
@@ -144,9 +144,7 @@ fn retrive_k_units(unit_heap: BinaryHeap<UnitDistance>, k: usize) -> Vec<String>
 }
 */
 
-fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, unit: &'a&'a str, list_size: usize) -> (&'a &'a str, Vec<&'a String>) {
-  assert!(list_size != 0);
-
+fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, unit: &'a&'a str) -> (&'a &'a str, Vec<&'a String>) {
   let ref_unit: &FehUnit = all_units.get(&String::from(*unit)).unwrap();
   let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
  
@@ -164,11 +162,90 @@ fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, unit: &'a&'a str
     .collect::<Vec<&String>>());
 }
 
-fn print_k_closest(unit: &&str, list: &Vec<&String>, k: usize) -> () {
-  println!("The top {} [statwise] closest units to {} were...", k, unit);
-  for index in ((list.len() - k)..list.len()).rev() {
-    println!("{}) Hero: {}", list.len() - index, list[index]);
+fn distance_from_vec<'a>(all_units: &'a HashMap<String, FehUnit>, v: &VecF) -> Vec<&'a String> {
+  let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
+ 
+  for (unit_name, unit_stats_vec) in all_units.iter() {
+    let dist = VecF::euclid_distance(&v, &unit_stats_vec.stats);
+    unit_heap.push(UnitDistance(unit_name, dist));
   }
+
+  return unit_heap
+    .into_sorted_vec()
+    .into_iter()
+    .map(|hero| hero.0)
+    .collect::<Vec<&String>>();
+}
+
+fn hero_stat_diffs(all_units: &HashMap<String, FehUnit>, from_hero: &String, to_hero: &String) -> VecF {
+  return &all_units.get(to_hero).unwrap().stats - &all_units.get(from_hero).unwrap().stats;
+}
+
+fn sign_to_char(i: i32) -> char {
+  return if i < 0 { '-' }
+    else if i > 0 { '+' }
+    else { '\0' }
+}
+
+fn float_stat_delta_string(i: i32) -> String {
+  return String::from(sign_to_char(i)) + i.abs().to_string().as_str();
+}
+
+fn vector_to_string_diffs(stat_vec: &VecF) -> String {
+  return format!("[Hp: {} Atk: {} Spd: {} Def: {}, Res: {}]", 
+    float_stat_delta_string(stat_vec.get(0) as i32), 
+    float_stat_delta_string(stat_vec.get(1) as i32), 
+    float_stat_delta_string(stat_vec.get(2) as i32),
+    float_stat_delta_string(stat_vec.get(3) as i32),
+    float_stat_delta_string(stat_vec.get(4) as i32)
+  );
+}
+
+fn print_k_closest(all_units: &HashMap<String, FehUnit>, unit: &&str, list: &Vec<&String>, k: usize) -> () {
+  println!("------------------------------------------\nThe top {} [statwise] closest units to {} were...\n------------------------------------------", k, unit);
+  let unit_string = &String::from(*unit);
+  for index in 0..k {
+    let close_hero = list[index];
+    println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&hero_stat_diffs(all_units, unit_string, close_hero)));
+  }
+  println!("------------------------------------------\n")
+}
+
+fn print_k_closest_vec(all_units: &HashMap<String, FehUnit>, v: &VecF, list: &Vec<&String>, k: usize) -> () {
+  println!("------------------------------------------\nThe top {} [statwise] closest units to vector {:?} were...\n------------------------------------------", k, v);
+  for index in 0..k {
+    let close_hero = list[index];
+    println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - v)));
+  }
+  println!("------------------------------------------\n")
+}
+
+fn print_k_farthest(all_units: &HashMap<String, FehUnit>, unit: &&str, list: &Vec<&String>, k: usize) -> () {
+  println!("------------------------------------------\nThe top {} [statwise] farthest units to {} were...\n------------------------------------------", k, unit);
+  let unit_string = &String::from(*unit);
+  for index in ((list.len() - k)..(list.len())).rev() {
+    let far_hero = list[index];
+    println!("{}) {}, Diffs = {}", list.len() - index, far_hero, vector_to_string_diffs(&hero_stat_diffs(all_units, unit_string, far_hero)));
+  }
+  println!("------------------------------------------\n")
+}
+
+fn print_k_farthest_vec(all_units: &HashMap<String, FehUnit>, v: &VecF, list: &Vec<&String>, k: usize) -> () {
+  println!("------------------------------------------\nThe top {} [statwise] farthest units to vector {:?} were...\n------------------------------------------", k, v);
+  for index in ((list.len() - k)..(list.len())).rev() {
+    let close_hero = list[index];
+    println!("{}) {}, Diffs = {}", list.len() - index, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - v)));
+  }
+  println!("------------------------------------------\n")
+}
+
+fn get_center_of_mass(all_units: &HashMap<String, FehUnit>) -> VecF {
+  let mut com = VecF::zeroes(5);
+  for (_ , unit) in all_units.iter() {
+    com = &com + &unit.stats;
+  }
+
+  return (1f32 / (all_units.len() as f32)) * (com);
 }
 
 fn main() {
@@ -187,7 +264,16 @@ fn main() {
   // do interesting stuff w/ data
   const UNIT_NAME: &str = "Arden";
   println!("Finding nearest neighbors to {}...", UNIT_NAME);
-  let (unit, list): (&&str, Vec<&String>) = k_nearest_units(&all_units, &UNIT_NAME, 10);
+  let (unit, list): (&&str, Vec<&String>) = k_nearest_units(&all_units, &UNIT_NAME);
 
-  print_k_closest(unit, &list, 30);
+  print_k_closest(&all_units, unit, &list, 10);
+  print_k_farthest(&all_units, unit, &list, 10);
+
+  let com = get_center_of_mass(&all_units);
+  println!("Stat center of mass: {:?}", com);
+  //println!("The farthest unit from the center of mass is {:?}", farthest_from(&all_units, com));
+
+  let dists = distance_from_vec(&all_units, &com);
+  print_k_closest_vec(&all_units, &com, &dists, 10);
+  print_k_farthest_vec(&all_units, &com, &dists, 10);
 }
