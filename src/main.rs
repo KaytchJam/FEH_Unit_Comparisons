@@ -3,10 +3,8 @@ mod stats_structs;
 
 use reqwest::{RequestBuilder, Response};
 use serde::{Serialize, Deserialize};
-use core::num;
 use std::{cmp, collections::{BinaryHeap, HashMap}};
 use crate::stats_structs::vec_f::VecF;
-use std::io;
 
 // BASIC STRUCT FOR DESCRIBING A FEH UNIT
 #[derive(Debug)]
@@ -145,7 +143,7 @@ fn retrive_k_units(unit_heap: BinaryHeap<UnitDistance>, k: usize) -> Vec<String>
 }
 */
 
-fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, unit: &'a&'a str) -> (&'a &'a str, Vec<&'a String>) {
+fn k_nearest_units_old<'a>(all_units: &'a HashMap<String, FehUnit>, unit: &'a&'a str) -> (&'a &'a str, Vec<&'a String>) {
   let ref_unit: &FehUnit = all_units.get(&String::from(*unit)).unwrap();
   let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
  
@@ -161,6 +159,23 @@ fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, unit: &'a&'a str
     .into_iter()
     .map(|hero| hero.0)
     .collect::<Vec<&String>>());
+}
+
+fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, cur_unit_name: &String, cur_unit_stats: &VecF) -> Vec<&'a String> {
+  let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
+
+  for (unit_name, unit_stats_vec) in all_units.iter() {
+    if unit_name != cur_unit_name {
+      let dist: f32 = cur_unit_stats.euclid_distance(&unit_stats_vec.stats);
+      unit_heap.push(UnitDistance(unit_name, dist));
+    }
+  }
+
+  return unit_heap
+    .into_sorted_vec()
+    .into_iter()
+    .map(|hero| hero.0)
+  . collect::<Vec<&String>>();
 }
 
 fn distance_from_vec<'a>(all_units: &'a HashMap<String, FehUnit>, v: &VecF) -> Vec<&'a String> {
@@ -202,40 +217,20 @@ fn vector_to_string_diffs(stat_vec: &VecF) -> String {
   );
 }
 
-fn print_k_closest(all_units: &HashMap<String, FehUnit>, unit: &&str, list: &Vec<&String>, k: usize) -> () {
+fn print_k_closest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize) -> () {
   println!("------------------------------------------\nThe top {} [statwise] closest units to {} were...\n------------------------------------------", k, unit);
-  let unit_string = &String::from(*unit);
   for index in 0..k {
     let close_hero = list[index];
-    println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&hero_stat_diffs(all_units, unit_string, close_hero)));
+    println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
   }
   println!("------------------------------------------\n")
 }
 
-fn print_k_closest_vec(all_units: &HashMap<String, FehUnit>, v: &VecF, list: &Vec<&String>, k: usize) -> () {
-  println!("------------------------------------------\nThe top {} [statwise] closest units to vector {:?} were...\n------------------------------------------", k, v);
-  for index in 0..k {
-    let close_hero = list[index];
-    println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - v)));
-  }
-  println!("------------------------------------------\n")
-}
-
-fn print_k_farthest(all_units: &HashMap<String, FehUnit>, unit: &&str, list: &Vec<&String>, k: usize) -> () {
-  println!("------------------------------------------\nThe top {} [statwise] farthest units to {} were...\n------------------------------------------", k, unit);
-  let unit_string = &String::from(*unit);
-  for index in ((list.len() - k)..(list.len())).rev() {
-    let far_hero = list[index];
-    println!("{}) {}, Diffs = {}", list.len() - index, far_hero, vector_to_string_diffs(&hero_stat_diffs(all_units, unit_string, far_hero)));
-  }
-  println!("------------------------------------------\n")
-}
-
-fn print_k_farthest_vec(all_units: &HashMap<String, FehUnit>, v: &VecF, list: &Vec<&String>, k: usize) -> () {
-  println!("------------------------------------------\nThe top {} [statwise] farthest units to vector {:?} were...\n------------------------------------------", k, v);
+fn print_k_farthest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize) -> () {
+  println!("------------------------------------------\nThe top {} [statwise] closest units to {} were...\n------------------------------------------", k, unit);
   for index in ((list.len() - k)..(list.len())).rev() {
     let close_hero = list[index];
-    println!("{}) {}, Diffs = {}", list.len() - index, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - v)));
+    println!("{}) {}, Diffs = {}", list.len() - index, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
   }
   println!("------------------------------------------\n")
 }
@@ -250,9 +245,10 @@ fn get_center_of_mass(all_units: &HashMap<String, FehUnit>) -> VecF {
 }
 
 fn main() {
-  let all_units = create_unit_dataset();
-  let mut cur = FehCurrent::new();
+  let all_units: HashMap<String, FehUnit> = create_unit_dataset();
+  let mut cur: FehCurrent = FehCurrent::new();
 
+  // Get user's hero
   let mut user_in: String = String::new();
   println!("Enter a unit name: ");
   if let Err(e) = std::io::stdin().read_line(&mut user_in) {
@@ -260,15 +256,22 @@ fn main() {
     panic!();
   }
 
-  const MERGES: usize = 100_000;
+  // Stat add-ons
+  const MERGES: usize = 0;
+  const DRAGONFLOWERS: usize = 0;
+
   user_in = String::from(&user_in[0..(user_in.len()-2)]);
-  println!("{}, len: {}", user_in, user_in.len());
   let unit: &FehUnit = all_units.get(&user_in).unwrap();
   cur.set_unit(unit);
   println!("{} : stats = {:?}", unit.name, unit.stats);
 
-  cur.add_merges(MERGES);
-  print!("{} : stats + {} merges = {:?}", unit.name, MERGES, cur.current_stats);
+  cur.add_merges(MERGES).add_dragonflowers(DRAGONFLOWERS);
+  println!("{} : stats + {} merges + {} DFs = {:?}", unit.name, MERGES, DRAGONFLOWERS, cur.current_stats);
+
+  let nearest = k_nearest_units(&all_units, &user_in, cur.current_stats.as_ref().unwrap());
+  print_k_closest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10);
+  print_k_farthest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10);
+
 }
 
 struct FehCurrent<'a> {
@@ -289,8 +292,6 @@ fn create_priority_stat_list(stats_in: &VecF) -> [u8; 5] {
     (3, stats_in.get(3) as u8), 
     (4, stats_in.get(4) as u8)
   ];
-
-  //println!("Before sort: {:?}", ordered_list);
 
   let mut i: usize = 1;
   while i < 5 {
@@ -318,7 +319,7 @@ impl<'a> FehCurrent<'a> {
     };
   }
 
-  fn add_merges(&mut self, num_merges: usize) -> () {
+  fn add_merges(&mut self, num_merges: usize) -> &mut Self {
     let stat_vec: &mut VecF = self.current_stats.as_mut().unwrap();
     let mut merges_at: usize = 0;
     
@@ -331,22 +332,25 @@ impl<'a> FehCurrent<'a> {
     }
 
     self.merges += num_merges;
+    return self;
   }
 
-  fn add_dragonflowers(&mut self, num_dragonflowers: usize) -> () {
+  // Add num_dragonflowers # of dragonflowers to the Current Unit
+  fn add_dragonflowers(&mut self, num_dragonflowers: usize) -> &mut Self {
     let stat_vec: &mut VecF = self.current_stats.as_mut().unwrap();
     let mut dfs_at: usize = 0;
 
     while dfs_at < num_dragonflowers {
       stat_vec.set(self.df_idx, stat_vec.get(self.df_idx) + 1f32);
-      self.df_idx += 1;
+      self.df_idx = (self.df_idx + 1) % 5;
       dfs_at += 1;
     }
 
     self.dragonflowers += num_dragonflowers;
+    return self;
   }
 
-  fn set_unit(&mut self, hero: &'a FehUnit) -> () {
+  fn set_unit(&mut self, hero: &'a FehUnit) -> &mut Self {
     let stat_vec: &VecF = &hero.stats;
 
     // OTHER
@@ -359,13 +363,17 @@ impl<'a> FehCurrent<'a> {
     self.stat_priority_list = Some(create_priority_stat_list(stat_vec));
     self.merge_idx = (0, 0);
     self.df_idx = 0;
+  
+    return self;
   }
 
-  fn reset_unit(&mut self) -> () {
+  fn reset_unit(&mut self) -> &mut Self {
     self.dragonflowers = 0;
     self.merges = 0;
     self.merge_idx = (0,1);
     self.df_idx = 0;
+
+    return self;
   }
 }
 
@@ -397,10 +405,10 @@ fn peuso_main() {
   // do interesting stuff w/ data
   const UNIT_NAME: &str = "Brave Tiki (Adult)";
   println!("Finding nearest neighbors to {}...", UNIT_NAME);
-  let (unit, list): (&&str, Vec<&String>) = k_nearest_units(&all_units, &UNIT_NAME);
+  //let (unit, list): (&&str, Vec<&String>) = k_nearest_units(&all_units, &UNIT_NAME);
 
-  print_k_closest(&all_units, unit, &list, 10);
-  print_k_farthest(&all_units, unit, &list, 10);
+  //print_k_closest(&all_units, unit, &list, 10);
+  //print_k_farthest(&all_units, unit, &list, 10);
 
   let com = get_center_of_mass(&all_units);
   println!("Stat center of mass: {:?}", com);
