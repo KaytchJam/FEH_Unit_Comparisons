@@ -3,8 +3,10 @@ mod stats_structs;
 
 use reqwest::{RequestBuilder, Response};
 use serde::{Serialize, Deserialize};
+use core::num;
 use std::{cmp, collections::{BinaryHeap, HashMap}};
 use crate::stats_structs::vec_f::VecF;
+use std::io;
 
 // BASIC STRUCT FOR DESCRIBING A FEH UNIT
 #[derive(Debug)]
@@ -105,7 +107,7 @@ fn extract_data(data: &str) -> serde_json::Result<HashMap<String,FehUnit>> {
       // Turn FehJson into proper Feh Struct
       Ok(unit_json) => {
         let name = unit_json.title_1.as_str();
-        unit_map.insert(String::from(name), FehUnit { name: String::from(name), stats: get_stats(unit_json) });
+        unit_map.insert(String::from(name), FehUnit { name: String::from(name), stats: get_stats(unit_json)});
       }
     }
   }
@@ -117,8 +119,7 @@ struct UnitDistance<'a>(&'a String, f32);
 
 const EPSILON: f32 = 0.0001f32;
 
-impl<'a> std::cmp::Eq for UnitDistance<'a> {
-}
+impl<'a> std::cmp::Eq for UnitDistance<'a> {}
 
 impl<'a> PartialEq for UnitDistance<'a> {
   fn eq(&self, other: &Self) -> bool {
@@ -249,6 +250,132 @@ fn get_center_of_mass(all_units: &HashMap<String, FehUnit>) -> VecF {
 }
 
 fn main() {
+  let all_units = create_unit_dataset();
+  let mut cur = FehCurrent::new();
+
+  let mut user_in: String = String::new();
+  println!("Enter a unit name: ");
+  if let Err(e) = std::io::stdin().read_line(&mut user_in) {
+    println!("Error encountered: {}", e.to_string());
+    panic!();
+  }
+
+  const MERGES: usize = 100_000;
+  user_in = String::from(&user_in[0..(user_in.len()-2)]);
+  println!("{}, len: {}", user_in, user_in.len());
+  let unit: &FehUnit = all_units.get(&user_in).unwrap();
+  cur.set_unit(unit);
+  println!("{} : stats = {:?}", unit.name, unit.stats);
+
+  cur.add_merges(MERGES);
+  print!("{} : stats + {} merges = {:?}", unit.name, MERGES, cur.current_stats);
+}
+
+struct FehCurrent<'a> {
+  current_unit: Option<&'a FehUnit>,
+  current_stats: Option<VecF>,
+  dragonflowers: usize,
+  merges: usize,
+  stat_priority_list: Option<[u8; 5]>,
+  merge_idx: (usize, usize),
+  df_idx: usize
+}
+
+fn create_priority_stat_list(stats_in: &VecF) -> [u8; 5] {
+  let mut ordered_list: [(usize, u8); 5] = [
+    (0, stats_in.get(0) as u8), 
+    (1, stats_in.get(1) as u8), 
+    (2, stats_in.get(2) as u8), 
+    (3, stats_in.get(3) as u8), 
+    (4, stats_in.get(4) as u8)
+  ];
+
+  //println!("Before sort: {:?}", ordered_list);
+
+  let mut i: usize = 1;
+  while i < 5 {
+    let mut j: usize = i;
+    while j > 0 && ordered_list[j - 1].1 < ordered_list[j].1 {
+      ordered_list.swap(j-1, j);
+      j -= 1;
+    }
+    i+= 1;
+  }
+
+  return ordered_list.map(|(idx, _)| idx as u8);
+}
+
+impl<'a> FehCurrent<'a> {
+  fn new() -> Self {
+    return FehCurrent{ 
+      current_unit: None, 
+      current_stats: None, 
+      dragonflowers: 0, 
+      merges: 0, 
+      stat_priority_list: None,
+      merge_idx: (0,1),
+      df_idx: 0
+    };
+  }
+
+  fn add_merges(&mut self, num_merges: usize) -> () {
+    let stat_vec: &mut VecF = self.current_stats.as_mut().unwrap();
+    let mut merges_at: usize = 0;
+    
+    while merges_at < num_merges {
+      stat_vec.set(self.merge_idx.0, stat_vec.get(self.merge_idx.0) + 1f32);
+      stat_vec.set(self.merge_idx.1, stat_vec.get(self.merge_idx.1) + 1f32);
+      self.merge_idx.0 = (self.merge_idx.0 + 2) % 5;
+      self.merge_idx.1 = (self.merge_idx.1 + 2) % 5;
+      merges_at += 1;
+    }
+
+    self.merges += num_merges;
+  }
+
+  fn add_dragonflowers(&mut self, num_dragonflowers: usize) -> () {
+    let stat_vec: &mut VecF = self.current_stats.as_mut().unwrap();
+    let mut dfs_at: usize = 0;
+
+    while dfs_at < num_dragonflowers {
+      stat_vec.set(self.df_idx, stat_vec.get(self.df_idx) + 1f32);
+      self.df_idx += 1;
+      dfs_at += 1;
+    }
+
+    self.dragonflowers += num_dragonflowers;
+  }
+
+  fn set_unit(&mut self, hero: &'a FehUnit) -> () {
+    let stat_vec: &VecF = &hero.stats;
+
+    // OTHER
+    self.dragonflowers = 0;
+    self.merges = 0;
+    self.current_unit = Some(hero);
+
+    // STATS
+    self.current_stats = Some(VecF::dupe(stat_vec));
+    self.stat_priority_list = Some(create_priority_stat_list(stat_vec));
+    self.merge_idx = (0, 0);
+    self.df_idx = 0;
+  }
+
+  fn reset_unit(&mut self) -> () {
+    self.dragonflowers = 0;
+    self.merges = 0;
+    self.merge_idx = (0,1);
+    self.df_idx = 0;
+  }
+}
+
+fn execute_feh_cli() {
+  print!("Initializing data...");
+  let hero_cur = FehCurrent::new();
+  println!("Welcome to the FEH Command Line Executable.\n");
+}
+
+fn create_unit_dataset() -> HashMap<String, FehUnit> {
   const GAMEPRESS_JSON_URL: &str = "https://gamepress.gg/sites/default/files/aggregatedjson/hero-list-FEH.json?2040027994887217598";
 
   // retrive json
@@ -260,9 +387,15 @@ fn main() {
     Err(e) => panic!("{}", e.to_string()),
     Ok(data) => data
   };
+
+  return all_units;
+}
+
+fn peuso_main() {
+  let all_units: HashMap<String, FehUnit> = create_unit_dataset();
   
   // do interesting stuff w/ data
-  const UNIT_NAME: &str = "Arden";
+  const UNIT_NAME: &str = "Brave Tiki (Adult)";
   println!("Finding nearest neighbors to {}...", UNIT_NAME);
   let (unit, list): (&&str, Vec<&String>) = k_nearest_units(&all_units, &UNIT_NAME);
 
@@ -273,7 +406,27 @@ fn main() {
   println!("Stat center of mass: {:?}", com);
   //println!("The farthest unit from the center of mass is {:?}", farthest_from(&all_units, com));
 
-  let dists = distance_from_vec(&all_units, &com);
-  print_k_closest_vec(&all_units, &com, &dists, 10);
-  print_k_farthest_vec(&all_units, &com, &dists, 10);
+  // let dists = distance_from_vec(&all_units, &com);
+  // print_k_closest_vec(&all_units, &com, &dists, 10);
+  // print_k_farthest_vec(&all_units, &com, &dists, 10);
 }
+
+// General Loop 
+/*
+{
+  unit: Option<&FehUnit> = None;
+  while true {
+    request_input();
+    read_input();
+
+    match in {
+      out_1 => {},
+      out_2 => {},
+      out_3 => {},
+      _ => reread_input()
+    };
+  }
+
+
+}
+*/

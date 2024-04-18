@@ -26,9 +26,17 @@ impl VecF {
   pub fn from(data: Vec<f32>) -> Self {
     return Self{data};
   }
+ 
+  pub fn dupe(other: &VecF) -> Self {
+    return VecF { data: other.data.clone() };
+  }
 
   pub fn get(&self, index: usize) -> f32 {
     return self.data[index];
+  }
+
+  pub fn set(&mut self, index: usize, val: f32) -> () {
+    self.data[index] = val;
   }
 
   // euclidean distance between two vecfs
