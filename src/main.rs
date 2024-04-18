@@ -137,30 +137,7 @@ impl<'a> Ord for UnitDistance<'a> {
   }
 }
 
-/*
-fn retrive_k_units(unit_heap: BinaryHeap<UnitDistance>, k: usize) -> Vec<String> {
-  return vec![];
-}
-*/
-
-fn k_nearest_units_old<'a>(all_units: &'a HashMap<String, FehUnit>, unit: &'a&'a str) -> (&'a &'a str, Vec<&'a String>) {
-  let ref_unit: &FehUnit = all_units.get(&String::from(*unit)).unwrap();
-  let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
- 
-  for (unit_name, unit_stats_vec) in all_units.iter() {
-    if *unit_name != ref_unit.name {
-      let dist = VecF::euclid_distance(&ref_unit.stats, &unit_stats_vec.stats);
-      unit_heap.push(UnitDistance(unit_name, dist));
-    }
-  }
-
-  return (unit, unit_heap
-    .into_sorted_vec()
-    .into_iter()
-    .map(|hero| hero.0)
-    .collect::<Vec<&String>>());
-}
-
+// Return a sorted vector of the nearest heroes to the current unit
 fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, cur_unit_name: &String, cur_unit_stats: &VecF) -> Vec<&'a String> {
   let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
 
@@ -176,25 +153,6 @@ fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, cur_unit_name: &
     .into_iter()
     .map(|hero| hero.0)
   . collect::<Vec<&String>>();
-}
-
-fn distance_from_vec<'a>(all_units: &'a HashMap<String, FehUnit>, v: &VecF) -> Vec<&'a String> {
-  let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
- 
-  for (unit_name, unit_stats_vec) in all_units.iter() {
-    let dist = VecF::euclid_distance(&v, &unit_stats_vec.stats);
-    unit_heap.push(UnitDistance(unit_name, dist));
-  }
-
-  return unit_heap
-    .into_sorted_vec()
-    .into_iter()
-    .map(|hero| hero.0)
-    .collect::<Vec<&String>>();
-}
-
-fn hero_stat_diffs(all_units: &HashMap<String, FehUnit>, from_hero: &String, to_hero: &String) -> VecF {
-  return &all_units.get(to_hero).unwrap().stats - &all_units.get(from_hero).unwrap().stats;
 }
 
 fn sign_to_char(i: i32) -> char {
@@ -248,7 +206,7 @@ fn main() {
   let all_units: HashMap<String, FehUnit> = create_unit_dataset();
   let mut cur: FehCurrent = FehCurrent::new();
 
-  // Get user's hero
+  // Get user input
   let mut user_in: String = String::new();
   println!("Enter a unit name: ");
   if let Err(e) = std::io::stdin().read_line(&mut user_in) {
@@ -260,18 +218,20 @@ fn main() {
   const MERGES: usize = 0;
   const DRAGONFLOWERS: usize = 0;
 
+  // Unit Retrieval
   user_in = String::from(&user_in[0..(user_in.len()-2)]);
   let unit: &FehUnit = all_units.get(&user_in).unwrap();
   cur.set_unit(unit);
   println!("{} : stats = {:?}", unit.name, unit.stats);
 
+  // Add modifiers
   cur.add_merges(MERGES).add_dragonflowers(DRAGONFLOWERS);
   println!("{} : stats + {} merges + {} DFs = {:?}", unit.name, MERGES, DRAGONFLOWERS, cur.current_stats);
 
+  // Compare the unit
   let nearest = k_nearest_units(&all_units, &user_in, cur.current_stats.as_ref().unwrap());
   print_k_closest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10);
   print_k_farthest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10);
-
 }
 
 struct FehCurrent<'a> {
@@ -284,6 +244,7 @@ struct FehCurrent<'a> {
   df_idx: usize
 }
 
+// Return a list of indices that map to the VecF values in sorted decreasing order
 fn create_priority_stat_list(stats_in: &VecF) -> [u8; 5] {
   let mut ordered_list: [(usize, u8); 5] = [
     (0, stats_in.get(0) as u8), 
@@ -293,6 +254,7 @@ fn create_priority_stat_list(stats_in: &VecF) -> [u8; 5] {
     (4, stats_in.get(4) as u8)
   ];
 
+  // Insertion Sort
   let mut i: usize = 1;
   while i < 5 {
     let mut j: usize = i;
@@ -319,6 +281,7 @@ impl<'a> FehCurrent<'a> {
     };
   }
 
+  // Add num_merges # of merges to FehCurrent, updates self.current_stats
   fn add_merges(&mut self, num_merges: usize) -> &mut Self {
     let stat_vec: &mut VecF = self.current_stats.as_mut().unwrap();
     let mut merges_at: usize = 0;
@@ -335,7 +298,7 @@ impl<'a> FehCurrent<'a> {
     return self;
   }
 
-  // Add num_dragonflowers # of dragonflowers to the Current Unit
+  // Add num_dragonflowers # of dragonflowers to FehCurrent, updates self.current_stats
   fn add_dragonflowers(&mut self, num_dragonflowers: usize) -> &mut Self {
     let stat_vec: &mut VecF = self.current_stats.as_mut().unwrap();
     let mut dfs_at: usize = 0;
@@ -350,24 +313,20 @@ impl<'a> FehCurrent<'a> {
     return self;
   }
 
+  // Bind a unit to the FehCurrent struct
   fn set_unit(&mut self, hero: &'a FehUnit) -> &mut Self {
     let stat_vec: &VecF = &hero.stats;
-
-    // OTHER
-    self.dragonflowers = 0;
-    self.merges = 0;
     self.current_unit = Some(hero);
-
-    // STATS
     self.current_stats = Some(VecF::dupe(stat_vec));
     self.stat_priority_list = Some(create_priority_stat_list(stat_vec));
-    self.merge_idx = (0, 0);
-    self.df_idx = 0;
-  
+    self.reset_unit();
+
     return self;
   }
 
+  // Reset the dragon flowers & merges on the unit
   fn reset_unit(&mut self) -> &mut Self {
+    self.current_stats = Some(VecF::dupe(&self.current_unit.unwrap().stats));
     self.dragonflowers = 0;
     self.merges = 0;
     self.merge_idx = (0,1);
@@ -383,6 +342,7 @@ fn execute_feh_cli() {
   println!("Welcome to the FEH Command Line Executable.\n");
 }
 
+// Generate a hashmap from the JSON FEH Unit Data
 fn create_unit_dataset() -> HashMap<String, FehUnit> {
   const GAMEPRESS_JSON_URL: &str = "https://gamepress.gg/sites/default/files/aggregatedjson/hero-list-FEH.json?2040027994887217598";
 
