@@ -43,6 +43,7 @@ pub struct FehCurrent<'a> {
   pub df_idx: usize
 }
 
+// Manager struct for the current FehUnit 
 impl<'a> FehCurrent<'a> {
   // Return a new FehCurrent struct
   pub fn new() -> Self {
@@ -132,36 +133,78 @@ pub fn k_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, cur_unit_nam
   
 // Return the center of mass of the Hashmap
 pub fn get_center_of_mass(all_units: &HashMap<String, FehUnit>) -> VecF {
-    let mut com = VecF::zeroes(5);
-    for (_ , unit) in all_units.iter() {
-        com = &com + &unit.stats;
-    }
-  
-    return (1f32 / (all_units.len() as f32)) * (com);
+  let mut com = VecF::zeroes(5);
+  for (_ , unit) in all_units.iter() {
+      com = &com + &unit.stats;
   }
 
-// Manager struct for the current FehUnit 
+  return (1f32 / (all_units.len() as f32)) * (com);
+}
+
 
 // Return a list of indices that map to the VecF values in sorted decreasing order
 fn create_priority_stat_list(stats_in: &VecF) -> [u8; 5] {
-    let mut ordered_list: [(usize, u8); 5] = [
-        (0, stats_in.get(0) as u8), 
-        (1, stats_in.get(1) as u8), 
-        (2, stats_in.get(2) as u8), 
-        (3, stats_in.get(3) as u8), 
-        (4, stats_in.get(4) as u8)
-        ];
-        
-        // Insertion Sort
-        let mut i: usize = 1;
-        while i < 5 {
-            let mut j: usize = i;
-            while j > 0 && ordered_list[j - 1].1 < ordered_list[j].1 {
-      ordered_list.swap(j-1, j);
-      j -= 1;
-    }
-    i+= 1;
+  let mut ordered_list: [(usize, u8); 5] = [
+      (0, stats_in.get(0) as u8), 
+      (1, stats_in.get(1) as u8), 
+      (2, stats_in.get(2) as u8), 
+      (3, stats_in.get(3) as u8), 
+      (4, stats_in.get(4) as u8)
+      ];
+      
+      // Insertion Sort
+      let mut i: usize = 1;
+      while i < 5 {
+          let mut j: usize = i;
+          while j > 0 && ordered_list[j - 1].1 < ordered_list[j].1 {
+    ordered_list.swap(j-1, j);
+    j -= 1;
+  }
+  i+= 1;
 }
 
 return ordered_list.map(|(idx, _)| idx as u8);
+}
+
+// Return the sign of the integer as a character
+fn sign_to_char(i: i32) -> char {
+  return if i < 0 { '-' }
+    else if i > 0 { '+' }
+    else { '\0' }
+}
+
+// Turn the integer to a string, sign included
+fn float_stat_delta_string(i: i32) -> String {
+  return String::from(sign_to_char(i)) + i.abs().to_string().as_str();
+}
+
+// Print the vector with float_stat_delta_string() signs
+fn vector_to_string_diffs(stat_vec: &VecF) -> String {
+  return format!("[Hp: {} Atk: {} Spd: {} Def: {}, Res: {}]", 
+    float_stat_delta_string(stat_vec.get(0) as i32), 
+    float_stat_delta_string(stat_vec.get(1) as i32), 
+    float_stat_delta_string(stat_vec.get(2) as i32),
+    float_stat_delta_string(stat_vec.get(3) as i32),
+    float_stat_delta_string(stat_vec.get(4) as i32)
+  );
+}
+
+// Print the k closest vectors from the sorted list
+pub fn print_k_closest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize) -> () {
+  println!("------------------------------------------\nThe top {} [statwise] closest units to {} were...\n------------------------------------------", k, unit);
+  for index in 0..k {
+      let close_hero = list[index];
+      println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
+  }
+  println!("------------------------------------------\n")
+}
+
+// Print the k farthest vectors from the sorted list
+pub fn print_k_farthest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize) -> () {
+  println!("------------------------------------------\nThe top {} [statwise] closest units to {} were...\n------------------------------------------", k, unit);
+  for index in ((list.len() - k)..(list.len())).rev() {
+      let close_hero = list[index];
+      println!("{}) {}, Diffs = {}", list.len() - index, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
+  }
+  println!("------------------------------------------\n")
 }
