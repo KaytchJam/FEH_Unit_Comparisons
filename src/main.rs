@@ -2,7 +2,7 @@ mod utils;
 mod feh_json;
 
 use std::collections::HashMap;
-use crate::utils::feh_structs::{FehCurrent, FehUnit};
+use crate::utils::feh_structs::{DistanceMetric, FehCurrent, FehUnit};
 
 
 fn main() {
@@ -32,9 +32,13 @@ fn main() {
   println!("{} : stats + {} merges + {} DFs = {:?}", unit.name, MERGES, DRAGONFLOWERS, cur.current_stats);
 
   // Compare the unit
-  let nearest = utils::feh_structs::k_nearest_units(&all_units, &user_in, cur.current_stats.as_ref().unwrap());
-  utils::feh_structs::print_k_closest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10);
-  utils::feh_structs::print_k_farthest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10);
+  let nearest = utils::feh_structs::k_euclidean_nearest_units(&all_units, &user_in, cur.current_stats.as_ref().unwrap());
+  utils::feh_structs::print_k_closest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10, DistanceMetric::EUCLIDEAN);
+  utils::feh_structs::print_k_farthest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10, DistanceMetric::EUCLIDEAN);
+
+  let least_rotation = utils::feh_structs::k_cosine_nearest_units(&all_units, &user_in, cur.current_stats.as_ref().unwrap());
+  utils::feh_structs::print_k_closest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &least_rotation, 10, DistanceMetric::COSINE);
+  utils::feh_structs::print_k_farthest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &least_rotation, 10, DistanceMetric::COSINE);
 }
 
 // fn execute_feh_cli() {

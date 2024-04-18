@@ -101,6 +101,7 @@ impl VecF {
     return self.data.iter().sum();
   }
 
+  // Project this vector onto another vector "onto"
   pub fn project(&self, onto: &VecF) -> VecF {
     assert_eq!(self.data.len(), onto.data.len());
     return onto * (self.dot(onto) / onto.dot(onto));
@@ -109,6 +110,11 @@ impl VecF {
   // Consume the vector and return the Vec<f32> it holds
   pub fn retrieve_buffer(self) -> Vec<f32> {
     return self.data;
+  }
+
+  // 
+  pub fn angle(&self, other: &VecF) -> f32 {
+    return self.dot(other) / (self.magnitude() * other.magnitude()).acos();
   }
 }
 
