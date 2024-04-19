@@ -1,13 +1,16 @@
 use crate::stats_problems::stats_functions;
 use crate::stats_structs::vec_f;
 
+#[cfg(test)]
 pub mod ml_learn {
     use crate::{stats_problems::stats_functions::*, stats_structs::vec_f::VecF};
 
+    #[test]
     pub fn hello_world() {
         print!("Hello world.\n");
     }
 
+    #[test]
     pub fn example_vector() {
         // the data
         let d1: Vec<i32> = vec![1, 2, 4, 5, 6, 7, 8, 1, 1, 4, 4, 5, 7, 8, 2, 4, 5, 6, 5, 5, 3, 9, 9, 2];
@@ -53,6 +56,7 @@ pub mod ml_learn {
         println!();
     }
 
+    #[test]
     pub fn vector_fun() {
         const SIZE: usize = 4;
         let one = VecF::ones(SIZE);
@@ -70,6 +74,7 @@ pub mod ml_learn {
         print!("back to normal: {:?}\n", sum.magnitude() * sum.normalize());
     }
 
+    #[test]
     pub fn example_projection() {
         let foo = VecF::from(vec![3., 2., 1.]);
         let foo2 = VecF::from(vec![35., 13., 22.]);

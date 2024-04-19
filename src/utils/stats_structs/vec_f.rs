@@ -235,3 +235,15 @@ impl Mul<VecF> for f32 {
 
 //   }
 // }
+
+#[cfg(test)]
+mod tests {
+    use super::VecF;
+
+  #[test]
+  fn addition_test() {
+    let v1: VecF = VecF::ones(3);
+    let v2: VecF = VecF::ones(3);
+    assert_eq!((v1 + v2).retrieve_buffer(), VecF::ns(2f32, 3).retrieve_buffer());
+  }
+}

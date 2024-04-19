@@ -83,6 +83,8 @@ fn str_to_f32(vof64: Vec<String>) -> Vec<f32> {
 fn extract_data(data: &str) -> serde_json::Result<HashMap<String,FehUnit>> {
     let mut unit_map: HashMap<String,FehUnit> = HashMap::new();
     let mut as_serde: serde_json::Value = serde_json::from_str(data)?;
+
+    const APSOTROPHE: &str = "&#039;";
   
     for unit in as_serde.as_array_mut().unwrap().into_iter() {
       // convert the json string into a fehjson struct
@@ -95,8 +97,10 @@ fn extract_data(data: &str) -> serde_json::Result<HashMap<String,FehUnit>> {
   
         // Turn FehJson into proper Feh Struct
         Ok(unit_json) => {
-          let name = unit_json.title_1.as_str();
-          unit_map.insert(String::from(name), FehUnit { name: String::from(name), stats: get_stats(unit_json)});
+          let mut out_str = String::from(unit_json.title_1.as_str());
+          if unit_json.title_1.contains(APSOTROPHE) { out_str = out_str.replace(APSOTROPHE, "'"); }
+          let name = out_str.as_str();
+          unit_map.insert(String::from(name).to_ascii_uppercase(), FehUnit { name: String::from(name), stats: get_stats(unit_json)});
         }
       }
     }
