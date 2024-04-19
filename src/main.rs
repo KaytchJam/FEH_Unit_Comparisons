@@ -46,10 +46,12 @@ fn main() {
     utils::feh_structs::print_k_closest(&all_units, user_str, cur_stats, &nearest, 10, metric);
     utils::feh_structs::print_k_farthest(&all_units, user_str, cur_stats, &nearest, 10, metric);
 
-    println!("Enter anything to continue...");
+    println!("Enter anything to move on...");
     _ = std::io::stdin().read_line(&mut buffer);
     clear_screen();
   }
+
+  print!("Finished!");
 }
 
 // fn execute_feh_cli() {
