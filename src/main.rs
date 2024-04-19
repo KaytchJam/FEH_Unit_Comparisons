@@ -4,6 +4,9 @@ mod feh_json;
 use std::collections::HashMap;
 use crate::utils::feh_structs::{DistanceMetric, FehCurrent, FehUnit};
 
+fn clear_screen() {
+  print!("{}[2J", 27 as char);
+}
 
 fn main() {
   let all_units: HashMap<String, FehUnit> = feh_json::create_unit_dataset();
@@ -22,6 +25,7 @@ fn main() {
   const DRAGONFLOWERS: usize = 0;
 
   // Unit Retrieval
+  clear_screen();
   user_in = String::from(&user_in[0..(user_in.len()-2)]);
   let unit: &FehUnit = all_units.get(&user_in).unwrap();
   cur.set_unit(unit);
@@ -31,14 +35,21 @@ fn main() {
   cur.add_merges(MERGES).add_dragonflowers(DRAGONFLOWERS);
   println!("{} : stats + {} merges + {} DFs = {:?}", unit.name, MERGES, DRAGONFLOWERS, cur.current_stats);
 
-  // Compare the unit
-  let nearest = utils::feh_structs::k_euclidean_nearest_units(&all_units, &user_in, cur.current_stats.as_ref().unwrap());
-  utils::feh_structs::print_k_closest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10, DistanceMetric::EUCLIDEAN);
-  utils::feh_structs::print_k_farthest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &nearest, 10, DistanceMetric::EUCLIDEAN);
+  // Pre-loop stuffs
+  let cur_stats = cur.current_stats.as_ref().unwrap();
+  let user_str = &user_in.as_str();
+  let mut buffer: String = String::new();
 
-  let least_rotation = utils::feh_structs::k_cosine_nearest_units(&all_units, &user_in, cur.current_stats.as_ref().unwrap());
-  utils::feh_structs::print_k_closest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &least_rotation, 10, DistanceMetric::COSINE);
-  utils::feh_structs::print_k_farthest(&all_units, &user_in.as_str(), cur.current_stats.as_ref().unwrap(), &least_rotation, 10, DistanceMetric::COSINE);
+  // Iterate through every metric -> Make Unit Comparisons
+  for metric in DistanceMetric::into_iter() {
+    let nearest: Vec<&String> = utils::feh_structs::k_nearest_units(&all_units, &user_in, cur_stats, metric);
+    utils::feh_structs::print_k_closest(&all_units, user_str, cur_stats, &nearest, 10, metric);
+    utils::feh_structs::print_k_farthest(&all_units, user_str, cur_stats, &nearest, 10, metric);
+
+    println!("Enter anything to continue...");
+    _ = std::io::stdin().read_line(&mut buffer);
+    clear_screen();
+  }
 }
 
 // fn execute_feh_cli() {

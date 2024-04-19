@@ -113,31 +113,69 @@ impl<'a> FehCurrent<'a> {
   }
 }
 
-// Return a sorted vector of the nearest heroes to the current unit
-pub fn k_euclidean_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, cur_unit_name: &String, cur_unit_stats: &VecF) -> Vec<&'a String> {
-  let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
+// Enum for tracking different distance metrics
+#[derive(Debug, Clone, Copy)]
+pub enum DistanceMetric {
+  EUCLIDEAN = 0,
+  COSINE = 1
+}
 
-  for (unit_name, unit_stats_vec) in all_units.iter() {
-    if unit_name != cur_unit_name {
-      let dist: f32 = cur_unit_stats.euclid_distance(&unit_stats_vec.stats);
-      unit_heap.push(UnitDistance(unit_name, dist));
+impl DistanceMetric {
+  const METRICS: [DistanceMetric; 2] = [Self::EUCLIDEAN, Self::COSINE];
+
+  // Return the cardinality of the set of all distance metric enumerations
+  pub fn cardinality() -> usize {
+    return Self::METRICS.len();
+  }
+
+  // Return a distance metric by index
+  pub fn from_index(index: usize) -> DistanceMetric {
+    return Self::METRICS[index];
+  }
+
+  // Iterator for every element in METRICS
+  pub fn iter() -> core::slice::Iter<'static, DistanceMetric> {
+    return Self::METRICS.iter();
+  }
+
+  pub fn into_iter() -> core::array::IntoIter<DistanceMetric, 2> {
+    return Self::METRICS.into_iter();
+  }
+
+  // Returns the name of the distance metric being used
+  pub fn to_string(&self) -> String {
+    match self {
+      DistanceMetric::EUCLIDEAN => String::from("Euclidean"),
+      DistanceMetric::COSINE => String::from("Cosine")
     }
   }
 
-  return unit_heap
-    .into_sorted_vec()
-    .into_iter()
-    .map(|hero| hero.0)
-  . collect::<Vec<&String>>();
+  // Return a distance function from a distance metric
+  fn get_distance_func(&self) -> impl Fn(&VecF, &VecF, Option<f32>) -> f32 {
+    match self {
+      DistanceMetric::EUCLIDEAN => |v1: &VecF, v2: &VecF, _f: Option<f32>| v1.euclid_distance(v2),
+      DistanceMetric::COSINE =>  |v1: &VecF, v2: &VecF, f: Option<f32>| (v1.dot(v2) / (f.unwrap() * v2.magnitude())).acos()
+    }
+  }
+
+  // Returns pre_computation parameters to be passed into the distance function
+  fn pre_computations(&self, v: &VecF) -> Option<f32> {
+    match self {
+      DistanceMetric::EUCLIDEAN => None,
+      DistanceMetric::COSINE => Some(v.magnitude())
+    }
+  }
 }
 
-pub fn k_cosine_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, cur_unit_name: &String, cur_unit_stats: &VecF) -> Vec<&'a String> {
+// Construct a list of unit proximity based on the passed in DistanceMetric
+pub fn k_nearest_units<'a>(all_units: &'a HashMap<String,FehUnit>, cur_unit_name: &String, cur_unit_stats: &VecF, metric: DistanceMetric) -> Vec<&'a String> {
   let mut unit_heap: BinaryHeap<UnitDistance> = BinaryHeap::new();
-  let cur_unit_stats_mag = cur_unit_stats.magnitude();
+  let pre_compute: Option<f32> =  metric.pre_computations(cur_unit_stats);
+  let distance = metric.get_distance_func();
 
   for (unit_name, unit_struct) in all_units.iter() {
     if unit_name != cur_unit_name {
-      let dist: f32 = (cur_unit_stats.dot(&unit_struct.stats) / (cur_unit_stats_mag * unit_struct.stats.magnitude())).acos();
+      let dist: f32 = distance(cur_unit_stats, &unit_struct.stats, pre_compute);
       unit_heap.push(UnitDistance(unit_name, dist));
     }
   }
@@ -146,7 +184,27 @@ pub fn k_cosine_nearest_units<'a>(all_units: &'a HashMap<String, FehUnit>, cur_u
     .into_sorted_vec()
     .into_iter()
     .map(|hero| hero.0)
-  . collect::<Vec<&String>>();
+    .collect::<Vec<&String>>();
+}
+
+// Print the k closest vectors from the sorted list
+pub fn print_k_closest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize, metric: DistanceMetric) -> () {
+  println!("------------------------------------------\nThe top {} [{}] closest units to {} were...\n------------------------------------------", k, metric.to_string(), unit);
+  for index in 0..k {
+      let close_hero = list[index];
+      println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
+  }
+  println!("------------------------------------------\n")
+}
+
+// Print the k farthest vectors from the sorted list
+pub fn print_k_farthest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize, metric: DistanceMetric) -> () {
+  println!("------------------------------------------\nThe top {} [{}] farthest units to {} were...\n------------------------------------------", k, metric.to_string(), unit);
+  for index in ((list.len() - k)..(list.len())).rev() {
+      let close_hero = list[index];
+      println!("{}) {}, Diffs = {}", list.len() - index, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
+  }
+  println!("------------------------------------------\n")
 }
   
 // Return the center of mass of the Hashmap
@@ -207,36 +265,3 @@ fn vector_to_string_diffs(stat_vec: &VecF) -> String {
   );
 }
 
-pub enum DistanceMetric {
-  EUCLIDEAN = 0,
-  COSINE = 1
-}
-
-impl DistanceMetric {
-  fn to_string(&self) -> String {
-    match self {
-      DistanceMetric::EUCLIDEAN => String::from("Euclidean"),
-      DistanceMetric::COSINE => String::from("Cosine")
-    }
-  }
-}
-
-// Print the k closest vectors from the sorted list
-pub fn print_k_closest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize, metric: DistanceMetric) -> () {
-  println!("------------------------------------------\nThe top {} [{}] closest units to {} were...\n------------------------------------------", k, metric.to_string(), unit);
-  for index in 0..k {
-      let close_hero = list[index];
-      println!("{}) {}, Diffs = {}", index + 1, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
-  }
-  println!("------------------------------------------\n")
-}
-
-// Print the k farthest vectors from the sorted list
-pub fn print_k_farthest(all_units: &HashMap<String, FehUnit>, unit: &&str, unit_stats: &VecF, list: &Vec<&String>, k: usize, metric: DistanceMetric) -> () {
-  println!("------------------------------------------\nThe top {} [{}] farthest units to {} were...\n------------------------------------------", k, metric.to_string(), unit);
-  for index in ((list.len() - k)..(list.len())).rev() {
-      let close_hero = list[index];
-      println!("{}) {}, Diffs = {}", list.len() - index, close_hero, vector_to_string_diffs(&(&all_units.get(close_hero).unwrap().stats - unit_stats)));
-  }
-  println!("------------------------------------------\n")
-}
