@@ -39,6 +39,14 @@ impl VecF {
     self.data[index] = val;
   }
 
+  pub fn abs(mut self) -> Self {
+    for i in 0..(self.data.len()) {
+      self.data[i] = self.data[i].abs();
+    }
+
+    return self;
+  }
+
   // euclidean distance between two vecfs
   pub fn euclid_distance(&self, other: &Self) -> f32 {
     assert_eq!(self.data.len(), other.data.len());
@@ -47,6 +55,17 @@ impl VecF {
       .map(|index: usize| (self.data[index] - other.data[index]).powi(2))
       .sum::<f32>()
       .sqrt();
+  }
+
+  // generalized distance between two vecfs (norm)
+  pub fn norm(&self, other: &Self, p: f32) -> f32 {
+    assert_ne!(p, 0f32);
+    assert_eq!(self.data.len(), other.data.len());
+    return (0..self.data.len())
+      .into_iter()
+      .map(|index: usize| (self.data[index] - other.data[index]).powf(p))
+      .sum::<f32>()
+      .powf(1f32/p);
   }
 
   // dot product of two vecfs

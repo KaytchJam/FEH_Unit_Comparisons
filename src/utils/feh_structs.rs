@@ -141,11 +141,13 @@ impl<'a> FehCurrent<'a> {
 #[derive(Debug, Clone, Copy)]
 pub enum DistanceMetric {
   EUCLIDEAN = 0,
-  COSINE = 1
+  COSINE = 1,
+  MANHATTAN = 2,
+  MINKOWKSI = 3
 }
 
 impl DistanceMetric {
-  const METRICS: [DistanceMetric; 2] = [Self::EUCLIDEAN, Self::COSINE];
+  const METRICS: [DistanceMetric; 4] = [Self::EUCLIDEAN, Self::COSINE, Self::MANHATTAN, Self::MINKOWKSI];
 
   // Return the cardinality of the set of all distance metric enumerations
   pub fn cardinality() -> usize {
@@ -163,7 +165,7 @@ impl DistanceMetric {
   }
 
   // Into Iterator for every element in METRICS
-  pub fn into_iter() -> core::array::IntoIter<DistanceMetric, 2> {
+  pub fn into_iter() -> core::array::IntoIter<DistanceMetric, 4> {
     return Self::METRICS.into_iter();
   }
 
@@ -171,15 +173,19 @@ impl DistanceMetric {
   pub fn to_string(&self) -> String {
     match self {
       DistanceMetric::EUCLIDEAN => String::from("Euclidean"),
-      DistanceMetric::COSINE => String::from("Cosine")
+      DistanceMetric::COSINE => String::from("Cosine"),
+      DistanceMetric::MANHATTAN => String::from("Manhattan"),
+      DistanceMetric::MINKOWKSI => String::from("Minkowski")
     }
   }
 
   // Return a distance function from a distance metric
   fn get_distance_func(&self) -> impl Fn(&VecF, &VecF, Option<f32>) -> f32 {
     match self {
-      DistanceMetric::EUCLIDEAN => |v1: &VecF, v2: &VecF, _f: Option<f32>| v1.euclid_distance(v2),
-      DistanceMetric::COSINE =>  |v1: &VecF, v2: &VecF, f: Option<f32>| (v1.dot(v2) / (f.unwrap() * v2.magnitude())).acos()
+      DistanceMetric::EUCLIDEAN => |v1: &VecF, v2: &VecF, _| v1.euclid_distance(v2),
+      DistanceMetric::COSINE =>    |v1: &VecF, v2: &VecF, f: Option<f32>| (v1.dot(v2) / (f.unwrap() * v2.magnitude())).acos(),
+      DistanceMetric::MANHATTAN => |v1: &VecF, v2: &VecF, _| (v1 - v2).retrieve_buffer().iter().map(|f| f.abs()).sum::<f32>(),
+      DistanceMetric::MINKOWKSI => |v1: &VecF, v2: &VecF, _| v1.norm(v2, 1.5)
     }
   }
 
@@ -187,7 +193,9 @@ impl DistanceMetric {
   fn pre_computations(&self, v: &VecF) -> Option<f32> {
     match self {
       DistanceMetric::EUCLIDEAN => None,
-      DistanceMetric::COSINE => Some(v.magnitude())
+      DistanceMetric::COSINE => Some(v.magnitude()),
+      DistanceMetric::MANHATTAN => None,
+      DistanceMetric::MINKOWKSI => None
     }
   }
 }
