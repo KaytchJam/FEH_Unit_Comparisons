@@ -11,17 +11,35 @@ const RETREIVE_ON_ERROR: usize = 8;
 // Clear the terminal
 fn clear_screen() { print!("{}[2J{}[1;1H", 27 as char, 27 as char); }
 
+// Prints an enumerated set of strings in the form "1) set[0]\n2) set[1]\n... n) set[n]\n"
+fn reprint_unit_set(set: &Vec<&String>) -> (usize, bool) {
+  clear_screen();
+  println!("Not a valid input. Please input again.");
+  for (i, unit_name) in set.iter().enumerate() { println!("{}) {}", i + 1, unit_name); }
+  (0, false)
+}
+
 // Returns 
 fn get_unit_on_typo(all_units: &HashMap<String, FehUnit>, user_in: String, num_to_retrieve: usize) -> &FehUnit {
   clear_screen();
   println!("\'{}\' could not be found. Did you mean...?", &user_in);
+
   let set: Vec<&String> = utils::feh_structs::get_n_closest(&all_units, &user_in, num_to_retrieve);
+  let mut n: usize = 0;
+  let mut valid_in: bool = false;
+  
+  while !valid_in {
+    println!("Enter the index of the character you meant to type in:");
+    let mut index_in: String = String::new();
+    std::io::stdin().read_line(&mut index_in).expect("Was unable to read input properly");
 
-  println!("Enter the index of the character you meant to type in:");
-  let mut index_in: String = String::new();
-  std::io::stdin().read_line(&mut index_in).expect("Was unable to read input properly");
+    // INPUT CHECKING
+    (n, valid_in) = match index_in.trim().parse::<usize>() {
+      Ok(idx) => { if (0..=num_to_retrieve).contains(&idx) { (idx, true) } else { reprint_unit_set(&set) } },
+      Err(_) => reprint_unit_set(&set)
+    }
+  }
 
-  let n = index_in.trim().parse::<usize>().unwrap();
   return all_units.get(&set[n-1].to_ascii_uppercase()).as_ref().unwrap();
 }
 
