@@ -175,7 +175,7 @@ impl DistanceMetric {
       DistanceMetric::EUCLIDEAN => String::from("Euclidean"),
       DistanceMetric::COSINE => String::from("Cosine"),
       DistanceMetric::MANHATTAN => String::from("Manhattan"),
-      DistanceMetric::MINKOWKSI => String::from("Minkowski")
+      DistanceMetric::MINKOWKSI => String::from("Minkowski (1.5)")
     }
   }
 
