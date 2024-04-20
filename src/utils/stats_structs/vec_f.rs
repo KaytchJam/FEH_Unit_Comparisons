@@ -131,9 +131,24 @@ impl VecF {
     return self.data;
   }
 
-  // 
+  // get the angle between this vector and another vector
   pub fn angle(&self, other: &VecF) -> f32 {
     return self.dot(other) / (self.magnitude() * other.magnitude()).acos();
+  }
+
+  // get an iterator of references 
+  pub fn iter(&self) -> std::slice::Iter<f32>{
+    return self.data.iter();
+  }
+
+  // get an iterator of mutable references
+  pub fn iter_mut(&mut self) -> std::slice::IterMut<f32> {
+    return self.data.iter_mut();
+  }
+
+  // consume the VecF and iterate through it
+  pub fn into_iter(self) -> std::vec::IntoIter<f32> {
+    return self.data.into_iter();
   }
 }
 

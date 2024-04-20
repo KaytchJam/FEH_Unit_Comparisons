@@ -4,6 +4,10 @@ use super::utils::stats_structs::vec_f::VecF;
 use std::collections::HashMap;
 use super::FehUnit;
 
+use std::fs::File;
+use std::io::Write;
+use std::path::Path;
+
 // FOR JSON SERIALIZATION
 #[derive(Serialize, Deserialize, Debug)]
 pub struct FehJson {
@@ -30,6 +34,7 @@ pub struct FehJson {
   va_jp: String
 }
 
+// Takes a FehJson struct and turns it into a VecF vector
 pub fn get_stats(fj: FehJson) -> VecF {
     return VecF::from(str_to_f32(
         vec![
@@ -72,6 +77,7 @@ async fn send_request(req: &String) -> Result<String, Box<dyn std::error::Error>
     Ok(body)
 }
 
+// Converts a vector of strings into a vector of floats
 fn str_to_f32(vof64: Vec<String>) -> Vec<f32> {
     return vof64.iter()
       .map(|s| s.parse::<i32>()
@@ -123,5 +129,29 @@ pub fn create_unit_dataset() -> HashMap<String, FehUnit> {
     };
   
     return all_units;
+}
+
+// Writes each FehUnit to the csv file
+fn write_unit(f: &mut File, unit: &FehUnit) -> Result<(), std::io::Error> {
+  f.write((unit.name.clone() + ",").as_bytes())?; // write name with comma
+  for idx in 0..3 { f.write(((unit.stats.get(idx) as u32).to_string() + ",").as_bytes())?; } // write HP ~ DEF with commas
+  f.write(((unit.stats.get(4) as u32).to_string() + "\n").as_bytes())?; // write res with newline
+  return Ok(());
+}
+
+// Converts the Hashmap dataset into a CSV file
+pub fn dataset_to_csv(all_units: &HashMap<String, FehUnit>, target_file: &str) -> bool {
+  if Path::new(target_file).exists() { 
+    println!("File already exists.");
+    return true; 
+  }
+  // INITS
+  const COLUMNS: [&str; 6] = ["Title,", "HP,", "ATK,", "SPD,", "DEF,", "RES\n"];
+  let mut f: File = File::create(target_file).expect("Wasn't able to create file");
+
+  // WRITES
+  for col in COLUMNS { f.write(col.as_bytes()).expect("couldn't write col in COLUMNS to the target_file");} // WRITE COLUMNS
+  for (_, unit) in all_units.iter() { write_unit(&mut f, unit).expect("Failed to write the unit to file");} // WRITE UNIT DATA
+  return false; // file closes on drop
 }
 
