@@ -63,7 +63,7 @@ impl VecF {
     assert_eq!(self.data.len(), other.data.len());
     return (0..self.data.len())
       .into_iter()
-      .map(|index: usize| (self.data[index] - other.data[index]).powf(p))
+      .map(|index: usize| (self.data[index] - other.data[index]).abs().powf(p))
       .sum::<f32>()
       .powf(1f32/p);
   }
