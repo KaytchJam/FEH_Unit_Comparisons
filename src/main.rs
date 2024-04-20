@@ -19,7 +19,7 @@ fn reprint_unit_set(set: &Vec<&String>) -> (usize, bool) {
   (0, false)
 }
 
-// Returns 
+// Checks if the user input is present in all_units, presents alternatives upon typos based on edit distance
 fn get_unit_on_typo(all_units: &HashMap<String, FehUnit>, user_in: String, num_to_retrieve: usize) -> &FehUnit {
   clear_screen();
   println!("\'{}\' could not be found. Did you mean...?", &user_in);
