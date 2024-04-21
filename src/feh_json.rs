@@ -1,4 +1,3 @@
-use reqwest::header::Iter;
 use reqwest::{RequestBuilder, Response};
 use serde::{Serialize, Deserialize};
 use std::collections::HashMap;
