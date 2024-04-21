@@ -6,12 +6,13 @@ use crate::utils::feh_structs::{DistanceMetric, FehCurrent, FehUnit};
 
 // CONSTANTS
 const CSV_OUTPUT_PATH: &str = "output/gamepress_feh_stats.csv";
+const METRIC_OUTPUT_PATH: &str = "output/metrics/";
 const RETREIVE_ON_ERROR: usize = 8;
 
-// Clear the terminal
+/// Clear the terminal
 fn clear_screen() { print!("{}[2J{}[1;1H", 27 as char, 27 as char); }
 
-// Prints an enumerated set of strings in the form "1) set[0]\n2) set[1]\n... n) set[n]\n"
+/// Prints an enumerated set of strings in the form "1) set[0]\n2) set[1]\n... n) set[n]\n"
 fn reprint_unit_set(set: &Vec<&String>) -> (usize, bool) {
   clear_screen();
   println!("Not a valid input. Please input again.");
@@ -19,7 +20,7 @@ fn reprint_unit_set(set: &Vec<&String>) -> (usize, bool) {
   (0, false)
 }
 
-// Checks if the user input is present in all_units, presents alternatives upon typos based on edit distance
+/// Checks if the user input is present in all_units, presents alternatives upon typos based on edit distance
 fn get_unit_on_typo(all_units: &HashMap<String, FehUnit>, user_in: String, num_to_retrieve: usize) -> &FehUnit {
   clear_screen();
   println!("\'{}\' could not be found. Did you mean...?", &user_in);
@@ -43,7 +44,7 @@ fn get_unit_on_typo(all_units: &HashMap<String, FehUnit>, user_in: String, num_t
   return all_units.get(&set[n-1].to_ascii_uppercase()).as_ref().unwrap();
 }
 
-// Retrieve a unit based on the user's input "user_in"
+/// Retrieve a unit based on the user's input "user_in"
 fn retrieve_feh_unit(all_units: &HashMap<String, FehUnit>, user_in: String, num_to_retrieve: usize) -> Result<&FehUnit,std::io::Error> {
   let user_in: String = user_in.to_ascii_uppercase();
   let possible_unit: Option<&FehUnit> = all_units.get(&user_in);
@@ -75,7 +76,7 @@ fn main() {
   // Setting Unit
   clear_screen();
   cur.set_unit(unit);
-  println!("{} : stats = {:?}", unit.name, unit.stats);
+  println!("{} : stats = {:?}", unit.name, unit.stats.iter());
   
   // Stat add-ons
   const MERGES: usize = 0;
@@ -83,25 +84,28 @@ fn main() {
 
   // Add modifiers
   cur.add_merges(MERGES).add_dragonflowers(DRAGONFLOWERS);
-  println!("{} : stats + {} merges + {} DFs = {:?}", unit.name, MERGES, DRAGONFLOWERS, cur.current_stats);
+  println!("{} : stats + {} merges + {} DFs = {:?}", unit.name, MERGES, DRAGONFLOWERS, cur.current_stats.as_ref().unwrap().iter());
 
   // Pre-loop stuffs
   let cur_stats = cur.current_stats.as_ref().unwrap();
   let user_str = &cur.current_unit.unwrap().name;
   let mut buffer: String = String::new();
 
-  println!("Press ENTER to show top 10 closest & farthest units...");
+  println!("Press ENTER to show top 10 closest & farthest units, ENTER 'S' to save them as a CSV...");
   _ = std::io::stdin().read_line(&mut buffer);
+  let save_check: bool = buffer.to_ascii_uppercase().contains("S");
   clear_screen();
 
   // Iterate through every metric -> Make Unit Comparisons
   for (i, metric) in DistanceMetric::into_iter().enumerate() {
     let nearest: Vec<&String> = utils::feh_structs::k_nearest_units(&all_units, &user_str, cur_stats, metric);
+    if save_check { feh_json::save_nearest_to_csv(&all_units, &nearest, cur.current_unit.as_ref().unwrap(), metric, METRIC_OUTPUT_PATH); }
+
     utils::feh_structs::print_k_closest(&all_units, &user_str.as_str(), cur_stats, &nearest, 10, metric);
     utils::feh_structs::print_k_farthest(&all_units, &user_str.as_str(), cur_stats, &nearest, 10, metric);
 
-    if i != DistanceMetric::cardinality() - 1 { println!("Press ENTER to move on..."); } else { println!("Press ENTER to exit..."); }
-    _ = std::io::stdin().read_line(&mut buffer);
+    if i != DistanceMetric::cardinality() - 1 { println!("Press ENTER to move on to the next metric..."); } else { println!("Press ENTER to exit..."); }
+    _ = std::io::stdin().read_line(&mut buffer).expect("Couldn't move on to the next metric properly");
     clear_screen();
   }
 

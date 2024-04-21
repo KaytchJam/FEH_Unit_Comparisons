@@ -1,8 +1,8 @@
+use reqwest::header::Iter;
 use reqwest::{RequestBuilder, Response};
 use serde::{Serialize, Deserialize};
-use super::utils::stats_structs::vec_f::VecF;
 use std::collections::HashMap;
-use super::FehUnit;
+use super::{utils::stats_structs::vec_f::VecF, FehUnit, DistanceMetric};
 
 use std::fs::File;
 use std::io::Write;
@@ -134,7 +134,7 @@ pub fn create_unit_dataset() -> HashMap<String, FehUnit> {
 // Writes each FehUnit to the csv file
 fn write_unit(f: &mut File, unit: &FehUnit) -> Result<(), std::io::Error> {
   f.write((unit.name.clone() + ",").as_bytes())?; // write name with comma
-  for idx in 0..3 { f.write(((unit.stats.get(idx) as u32).to_string() + ",").as_bytes())?; } // write HP ~ DEF with commas
+  for idx in 0..=3 { f.write(((unit.stats.get(idx) as u32).to_string() + ",").as_bytes())?; } // write HP ~ DEF with commas
   f.write(((unit.stats.get(4) as u32).to_string() + "\n").as_bytes())?; // write res with newline
   return Ok(());
 }
@@ -155,3 +155,33 @@ pub fn dataset_to_csv(all_units: &HashMap<String, FehUnit>, target_file: &str) -
   return false; // file closes on drop
 }
 
+fn write_list(f_name: &str, all_units: &HashMap<String, FehUnit>, columns: &[&str], unit: &FehUnit, nearest: core::slice::Iter<&String>) {
+  let mut f: File = File::create(f_name).expect("couldn't create the metric file");
+  for col in columns { f.write(col.as_bytes()).expect("couldn't write col in COLUMNS to the target_file");} // WRITE COLUMNS
+  f.write("0,".as_bytes()).expect("Failed to write leading 0");
+  write_unit(&mut f, unit).expect("Failed to write unit");
+
+  for (idx, unit_name) in nearest.enumerate() {
+    f.write(((idx+1).to_string() + ",").as_bytes()).expect("Failed to convert the \"rank\" to bytes");
+    let temp_unit = all_units.get(*unit_name).unwrap();
+    write_unit(&mut f, temp_unit).expect("Failed to write unit");
+  }
+}
+
+pub fn save_nearest_to_csv(all_units: &HashMap<String, FehUnit>, nearest: &Vec<&String>, unit: &FehUnit, metric: DistanceMetric, directory: &str) {
+  // Path to create:
+  let character_dir = unit.name.clone().replace("'","").replace(" ","_").to_ascii_lowercase();
+
+  if !Path::new(&(directory.to_owned() + character_dir.as_str())).exists() {
+    std::fs::create_dir(directory.to_owned() + "/" + character_dir.as_str()).expect("Couldn't create the directory");
+  }
+  
+  let mut metric_file_name = "/".to_owned() + character_dir.as_str() +  "_" + metric.to_string().replace(" (1.5)", "").as_str();
+  metric_file_name = directory.to_owned() + character_dir.as_str() + metric_file_name.to_ascii_lowercase().as_str();
+  print!("{}", metric_file_name);
+
+  // INITS
+  const COLUMNS: [&str; 7] = ["Rank,", "Title,", "HP,", "ATK,", "SPD,", "DEF,", "RES\n"];
+  write_list((metric_file_name.clone() + "_nearest").as_str(), all_units, &COLUMNS, unit, nearest.iter());
+  write_list((metric_file_name.clone() + "_farthest").as_str(), all_units, &COLUMNS, unit, nearest.iter());
+}
