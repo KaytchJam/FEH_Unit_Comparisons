@@ -11,8 +11,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 9,Death Knight,40,35,25,30,27
 10,Legendary Sigurd,41,41,23,37,26
 11,New Year Hríd,42,38,19,36,27
-12,Shiro,41,35,30,35,22
-13,Silque,39,33,23,35,31
+12,Silque,39,33,23,35,31
+13,Shiro,41,35,30,35,22
 14,Hríd,41,37,17,36,26
 15,Michalis,43,34,26,35,19
 16,Fallen Orson,43,38,28,36,23
@@ -36,8 +36,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 34,Fallen Berkut,40,35,17,35,30
 35,Eldigan,45,32,24,34,19
 36,Bertram,45,37,27,38,26
-37,Laevatein,39,37,31,34,22
-38,Soiree Reinhardt,38,34,21,27,25
+37,Soiree Reinhardt,38,34,21,27,25
+38,Laevatein,39,37,31,34,22
 39,Pirate Veronica,38,39,19,36,29
 40,Duo Ephraim,41,39,30,37,25
 41,Jorge,45,36,27,35,29
@@ -60,18 +60,18 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 58,Valentine's Alfonse,43,38,25,37,31
 59,Beruka,46,29,23,37,22
 60,Walhart,41,37,27,36,16
-61,Edelgard,41,39,30,37,21
-62,Xander,44,32,24,37,17
+61,Xander,44,32,24,37,17
+62,Edelgard,41,39,30,37,21
 63,New Year Alfonse,41,38,17,35,30
-64,Lukas,45,35,22,38,17
-65,Summer Tiki (Adult),35,36,30,32,24
-66,Valentine Silque,40,28,22,32,29
+64,Summer Tiki (Adult),35,36,30,32,24
+65,Valentine Silque,40,28,22,32,29
+66,Lukas,45,35,22,38,17
 67,Legendary Seliph,41,41,17,37,26
 68,Halloween Dozla,45,38,29,35,27
 69,Arthur (Fates),43,32,29,30,24
 70,Tobin,46,31,27,33,26
-71,Luke,43,34,28,30,20
-72,Nowi,45,34,27,30,27
+71,Nowi,45,34,27,30,27
+72,Luke,43,34,28,30,20
 73,Ares,40,36,30,33,18
 74,Fernand,45,41,26,32,23
 75,Summer Laevatein,38,38,16,31,26
@@ -123,8 +123,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 121,Lex,45,36,30,38,19
 122,Sigurd,41,35,32,34,17
 123,Effie,50,40,22,33,23
-124,Nemesis,43,39,23,37,34
-125,Minerva,40,31,33,32,22
+124,Minerva,40,31,33,32,22
+125,Nemesis,43,39,23,37,34
 126,Saber,40,31,33,32,22
 127,Boey,43,29,27,32,18
 128,Itsuki,41,37,30,33,32
@@ -200,8 +200,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 198,Roy (LA),34,35,19,27,30
 199,Brave Alm,42,38,35,37,20
 200,Summer Frederick,40,32,31,28,18
-201,Seteth,44,36,36,32,24
-202,Astram,44,35,36,36,21
+201,Astram,44,35,36,36,21
+202,Seteth,44,36,36,32,24
 203,Bridal Tanith,37,34,36,33,21
 204,Marth,41,31,34,29,23
 205,Catria,39,31,34,29,25
@@ -219,8 +219,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 217,Picnic Lukas,51,37,21,42,22
 218,Nephenee,37,31,35,34,20
 219,Vyland,47,41,30,36,19
-220,Lissa,39,26,25,28,30
-221,Jamke,38,36,32,29,17
+220,Jamke,38,36,32,29,17
+221,Lissa,39,26,25,28,30
 222,Letizia,38,40,16,35,34
 223,Halloween Ilyana,41,38,23,30,37
 224,Valentine's Greil,47,41,18,38,30
@@ -362,9 +362,9 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 360,Legendary Alm,40,37,37,26,22
 361,Igrene,42,37,37,26,24
 362,Summer Lyon,42,42,21,37,39
-363,Reginn,38,36,40,30,24
-364,Kris (F),40,37,40,30,25
-365,Kris (M),40,37,40,30,25
+363,Kris (M),40,37,40,30,25
+364,Reginn,38,36,40,30,24
+365,Kris (F),40,37,40,30,25
 366,Tanith,41,36,40,32,28
 367,Bridal Nailah,40,35,41,31,25
 368,Est,36,35,30,24,32
@@ -384,8 +384,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 382,Kaden,38,32,36,25,25
 383,Celica,39,32,33,22,22
 384,Summer Wolt,40,34,34,25,17
-385,Múspell,40,41,16,39,37
-386,Annette,40,39,36,28,30
+385,Annette,40,39,36,28,30
+386,Múspell,40,41,16,39,37
 387,Marcia,41,37,41,32,26
 388,Summer Caspar,46,41,36,30,23
 389,Legendary Corrin (F),41,38,40,34,29
@@ -440,14 +440,14 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 438,Orochi,40,40,24,24,37
 439,Reyson,37,29,34,24,26
 440,Azelle,41,37,39,26,23
-441,Masked Marth,43,34,36,25,19
-442,Lucina,43,34,36,25,19
+441,Lucina,43,34,36,25,19
+442,Masked Marth,43,34,36,25,19
 443,Spring Fir,39,35,41,28,24
 444,Atlas (Unit),46,43,37,34,27
 445,Sakura,36,28,30,24,30
 446,Mercedes,39,33,30,22,33
-447,Pirate Brigid,41,37,40,30,19
-448,Spring Maria,35,37,40,40,25
+447,Spring Maria,35,37,40,40,25
+448,Pirate Brigid,41,37,40,30,19
 449,Ophelia,38,37,33,20,23
 450,Hana,37,35,36,23,26
 451,Seiros,40,42,18,37,40
@@ -563,8 +563,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 561,Elice,40,41,35,27,34
 562,Halloween Mia,36,30,34,22,28
 563,Malice,40,39,43,32,28
-564,Hugh,40,38,42,27,24
-565,Shinon,40,38,42,27,24
+564,Shinon,40,38,42,27,24
+565,Hugh,40,38,42,27,24
 566,Sully,42,26,34,24,28
 567,Astrid,38,39,41,27,23
 568,Karel,47,30,35,25,20
@@ -596,8 +596,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 594,Ascended Joshua,41,39,43,29,25
 595,Lyn,37,28,37,26,29
 596,Valentine's Veronica,40,36,38,21,22
-597,Young Boyd,50,43,36,31,21
-598,Lyn (LA),37,31,36,27,34
+597,Lyn (LA),37,31,36,27,34
+598,Young Boyd,50,43,36,31,21
 599,Legendary Nanna,40,39,42,27,25
 600,Young Mia,40,41,43,32,27
 601,Ascended Hilda,42,42,43,34,26

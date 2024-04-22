@@ -109,8 +109,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 107,Spring Narcian,43,35,34,37,18
 108,New Year Hríd,42,38,19,36,27
 109,Balthus,47,42,24,37,31
-110,Robin (F),40,29,29,29,22
-111,Robin (M),40,29,29,29,22
+110,Robin (M),40,29,29,29,22
+111,Robin (F),40,29,29,29,22
 112,Cormag,42,36,32,34,23
 113,Valentine's Rudolf,46,43,21,41,29
 114,Gray,43,35,32,30,22
@@ -175,8 +175,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 173,Bridal Oboro,42,39,35,40,16
 174,Valentine's Ike,45,37,38,35,19
 175,Benny,48,35,23,44,34
-176,Saber,40,31,33,32,22
-177,Minerva,40,31,33,32,22
+176,Minerva,40,31,33,32,22
+177,Saber,40,31,33,32,22
 178,Bridal Charlotte,46,36,32,24,19
 179,Líf,42,38,30,34,29
 180,Roshea,41,38,35,38,21
@@ -602,8 +602,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 600,Brave Veronica,36,32,36,21,19
 601,Legendary Byleth (M),40,39,41,25,21
 602,New Year Dagr,40,41,42,27,22
-603,Shinon,40,38,42,27,24
-604,Hugh,40,38,42,27,24
+603,Hugh,40,38,42,27,24
+604,Shinon,40,38,42,27,24
 605,Ylgr,38,33,38,22,20
 606,Spring Severa,39,37,40,24,17
 607,Legendary Fae,40,42,28,37,41

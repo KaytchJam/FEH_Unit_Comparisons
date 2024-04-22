@@ -168,7 +168,7 @@ fn write_list(f_name: &str, all_units: &HashMap<String, FehUnit>, columns: &[&st
   }
 }
 
-/// Export nearest and farthest computated data for a given metric to a CSV
+/// Export nearest and farthest computated data for a given metric to a
 pub fn save_nearest_to_csv(all_units: &HashMap<String, FehUnit>, nearest: &Vec<&String>, unit: &FehUnit, metric: DistanceMetric, directory: &str) {
   // Path to create:
   let character_dir = unit.name.clone().replace("'","").replace(" ","_").to_ascii_lowercase();
@@ -183,6 +183,6 @@ pub fn save_nearest_to_csv(all_units: &HashMap<String, FehUnit>, nearest: &Vec<&
 
   // INITS
   const COLUMNS: [&str; 7] = ["Rank,", "Title,", "HP,", "ATK,", "SPD,", "DEF,", "RES\n"];
-  write_list((metric_file_name.clone() + "_nearest").as_str(), all_units, &COLUMNS, unit, nearest.iter());
-  write_list((metric_file_name.clone() + "_farthest").as_str(), all_units, &COLUMNS, unit, nearest.iter());
+  write_list((metric_file_name.clone() + "_nearest.csv").as_str(), all_units, &COLUMNS, unit, nearest.iter());
+  write_list((metric_file_name.clone() + "_farthest.csv").as_str(), all_units, &COLUMNS, unit, nearest.iter());
 }
