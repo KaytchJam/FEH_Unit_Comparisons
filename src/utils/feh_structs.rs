@@ -338,6 +338,7 @@ fn edit_distance(str1: &String, str2: &String) -> f32 {
   return v0[n] as f32;
 }
 
+/// List of units ordered by string distance to user string 'typo'
 fn edit_distance_list<'a, 'b>(all_units: &'b HashMap<String,FehUnit>, typo: &'a String) -> Vec<&'b String> {
   let mut closest: BinaryHeap<UnitDistance> = BinaryHeap::new();
 
@@ -353,6 +354,7 @@ fn edit_distance_list<'a, 'b>(all_units: &'b HashMap<String,FehUnit>, typo: &'a 
     .collect::<Vec<&String>>();
 }
 
+// Returns 'num_results' strings from edit_distance_list()
 pub fn get_n_closest<'a, 'b>(all_units: &'b HashMap<String,FehUnit>, typo: &'a String, num_results: usize) -> Vec<&'b String> {
   let distances = edit_distance_list(all_units, &typo.to_ascii_uppercase());
   let mut n_closest: Vec<&String> = Vec::with_capacity(num_results);
