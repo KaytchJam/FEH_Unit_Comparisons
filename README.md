@@ -64,7 +64,7 @@ fn main() {
     // ITERATE THROUGH EVERY DISTANCE METRIC, SHOW RESULTS
     for metric in DistanceMetric::into_iter() {
         let distances: Vec<&String> = all_unit_distances(&cur, &all_units, metric);
-        print_top_k(&cur, &all_units, &distances, metric);
+        print_top_k(&cur, &all_units, &distances, metric, NUM_TO_PRINT);
 
         if export_to_csv { 
             dist_to_csv(&cur, &all_units, &distances, metric, OUTPUT_PATH); 
