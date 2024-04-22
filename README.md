@@ -77,6 +77,10 @@ fn main() {
 
 The actual file has a bit more. For example, if a input `user_in` doesn't match any unit name in the `all_units` HashMap we then do a edit_distance comparison with all units in `all_units` and give the user a subset of possible approximations to choose from. Various print statements and variable storages are ommitted as well.
 
+#### Sample Terminal Outputs
+
+![Adult Tiki Outputs](https://pbs.twimg.com/media/GLkgd5jXYAAVnCJ?format=png&name=900x900)
+
 #### Future Plans
 
 - [ ] Export graphs top K nearest & farthest
