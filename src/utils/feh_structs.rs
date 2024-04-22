@@ -317,8 +317,8 @@ fn edit_distance(str1: &String, str2: &String) -> f32 {
   let v0: &mut Vec<u32> = &mut (0..(n+1)).into_iter().map(|u| u as u32).collect::<Vec<u32>>();
   let v1: &mut Vec<u32> = &mut vec![0; n+1];
 
-  let str1 = str1.as_bytes();
-  let str2 = str2.as_bytes();
+  let str1: &[u8] = str1.as_bytes();
+  let str2: &[u8] = str2.as_bytes();
 
   for i in 0..m {
     v1[0] = i as u32 + 1;

@@ -154,6 +154,7 @@ pub fn dataset_to_csv(all_units: &HashMap<String, FehUnit>, target_file: &str) -
   return false; // file closes on drop
 }
 
+/// Write an entire FehUnit proximity list to a file "f_name"
 fn write_list(f_name: &str, all_units: &HashMap<String, FehUnit>, columns: &[&str], unit: &FehUnit, nearest: core::slice::Iter<&String>) {
   let mut f: File = File::create(f_name).expect("couldn't create the metric file");
   for col in columns { f.write(col.as_bytes()).expect("couldn't write col in COLUMNS to the target_file");} // WRITE COLUMNS
@@ -167,6 +168,7 @@ fn write_list(f_name: &str, all_units: &HashMap<String, FehUnit>, columns: &[&st
   }
 }
 
+/// Export nearest and farthest computated data for a given metric to a CSV
 pub fn save_nearest_to_csv(all_units: &HashMap<String, FehUnit>, nearest: &Vec<&String>, unit: &FehUnit, metric: DistanceMetric, directory: &str) {
   // Path to create:
   let character_dir = unit.name.clone().replace("'","").replace(" ","_").to_ascii_lowercase();
