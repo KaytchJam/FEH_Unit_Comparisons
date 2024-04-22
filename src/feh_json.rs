@@ -184,5 +184,4 @@ pub fn save_nearest_to_csv(all_units: &HashMap<String, FehUnit>, nearest: &Vec<&
   // INITS
   const COLUMNS: [&str; 7] = ["Rank,", "Title,", "HP,", "ATK,", "SPD,", "DEF,", "RES\n"];
   write_list((metric_file_name.clone() + "_nearest.csv").as_str(), all_units, &COLUMNS, unit, nearest.iter());
-  write_list((metric_file_name.clone() + "_farthest.csv").as_str(), all_units, &COLUMNS, unit, nearest.iter());
 }

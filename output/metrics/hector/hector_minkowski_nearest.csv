@@ -71,8 +71,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 69,Stahl,45,31,26,30,22
 70,Amelia,47,34,34,35,23
 71,Legendary Ike,41,36,30,35,21
-72,Basilio,48,43,33,36,21
-73,Luke,43,34,28,30,20
+72,Luke,43,34,28,30,20
+73,Basilio,48,43,33,36,21
 74,Tiki (Adult),40,35,23,35,24
 75,Tobin,46,31,27,33,26
 76,Halloween Dozla,45,38,29,35,27
@@ -172,8 +172,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 170,Eliwood (LA),47,38,32,29,29
 171,Leon,39,34,30,30,15
 172,Narcian,42,29,29,32,26
-173,Fallen Gustav,40,41,25,38,30
-174,Brave Eliwood,40,37,35,32,18
+173,Brave Eliwood,40,37,35,32,18
+174,Fallen Gustav,40,41,25,38,30
 175,Brave Dimitri,41,40,36,40,19
 176,Young Minerva,40,36,37,35,19
 177,Nemesis,43,39,23,37,34
@@ -237,16 +237,16 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 235,Hans,46,45,39,35,21
 236,Sain,41,42,38,36,18
 237,Julian,40,38,38,33,18
-238,New Year Camilla,40,33,35,31,23
-239,Fae,46,33,28,25,30
+238,Fae,46,33,28,25,30
+239,New Year Camilla,40,33,35,31,23
 240,Ayra,41,33,37,31,21
 241,Soiree Reinhardt,38,34,21,27,25
 242,Palla,42,31,31,28,26
 243,Rearmed Alfred,40,45,25,43,27
 244,Itsuki,41,37,30,33,32
 245,Summer Tiki (Adult),35,36,30,32,24
-246,Flame Múspell,40,43,26,41,30
-247,Spring Xander,40,25,28,35,26
+246,Spring Xander,40,25,28,35,26
+247,Flame Múspell,40,43,26,41,30
 248,Summer Ylgr,42,35,36,30,25
 249,Reinhardt,38,32,23,27,25
 250,Winter Lissa,43,33,30,35,34
@@ -274,8 +274,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 272,Python,38,32,35,31,20
 273,Hinoka,41,35,32,25,24
 274,Summer Sylvain,42,32,35,27,16
-275,Masked Marth,43,34,36,25,19
-276,Lucina,43,34,36,25,19
+275,Lucina,43,34,36,25,19
+276,Masked Marth,43,34,36,25,19
 277,Ash,41,39,27,41,34
 278,Young Marth,41,36,37,32,26
 279,Panne,41,29,34,30,23
@@ -421,8 +421,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 419,Young Innes,43,37,38,26,27
 420,Legendary Robin (M),40,45,30,31,31
 421,Brave Roy,38,32,34,26,24
-422,Kris (M),40,37,40,30,25
-423,Kris (F),40,37,40,30,25
+422,Kris (F),40,37,40,30,25
+423,Kris (M),40,37,40,30,25
 424,Tharja,39,32,34,23,20
 425,Shigure,40,33,37,27,25
 426,Azelle,41,37,39,26,23
@@ -556,8 +556,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 554,Valentine's Veronica,40,36,38,21,22
 555,Eirika,42,26,35,26,28
 556,Bridal Fjorm,42,34,34,17,23
-557,Hugh,40,38,42,27,24
-558,Shinon,40,38,42,27,24
+557,Shinon,40,38,42,27,24
+558,Hugh,40,38,42,27,24
 559,Olivia,36,28,33,27,26
 560,Camilla,37,30,32,28,31
 561,New Year Kaden,41,35,39,25,28

@@ -109,8 +109,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 107,Spring Narcian,43,35,34,37,18
 108,New Year Hríd,42,38,19,36,27
 109,Balthus,47,42,24,37,31
-110,Robin (M),40,29,29,29,22
-111,Robin (F),40,29,29,29,22
+110,Robin (F),40,29,29,29,22
+111,Robin (M),40,29,29,29,22
 112,Cormag,42,36,32,34,23
 113,Valentine's Rudolf,46,43,21,41,29
 114,Gray,43,35,32,30,22
@@ -300,8 +300,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 298,Legendary Robin (F),40,32,35,30,25
 299,Halloween Kagero,41,38,21,32,33
 300,Winter Lissa,43,33,30,35,34
-301,Lucina,43,34,36,25,19
-302,Masked Marth,43,34,36,25,19
+301,Masked Marth,43,34,36,25,19
+302,Lucina,43,34,36,25,19
 303,Faye,42,30,25,26,31
 304,Ash,41,39,27,41,34
 305,Fallen Corrin (M),42,38,38,33,26
@@ -458,8 +458,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 456,Valentine's Owain,41,38,42,31,21
 457,Merlinus,50,20,35,31,27
 458,Ascended Hilda,42,42,43,34,26
-459,Kris (M),40,37,40,30,25
-460,Kris (F),40,37,40,30,25
+459,Kris (F),40,37,40,30,25
+460,Kris (M),40,37,40,30,25
 461,Azelle,41,37,39,26,23
 462,Winter Manuela,42,37,42,38,31
 463,Hel,40,38,41,30,18
@@ -602,8 +602,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 600,Brave Veronica,36,32,36,21,19
 601,Legendary Byleth (M),40,39,41,25,21
 602,New Year Dagr,40,41,42,27,22
-603,Hugh,40,38,42,27,24
-604,Shinon,40,38,42,27,24
+603,Shinon,40,38,42,27,24
+604,Hugh,40,38,42,27,24
 605,Ylgr,38,33,38,22,20
 606,Spring Severa,39,37,40,24,17
 607,Legendary Fae,40,42,28,37,41

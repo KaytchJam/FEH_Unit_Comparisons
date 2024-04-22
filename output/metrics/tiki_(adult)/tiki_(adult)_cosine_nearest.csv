@@ -179,8 +179,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 177,Sheena,45,30,25,36,33
 178,Valter,42,32,31,34,19
 179,Winter Lissa,43,33,30,35,34
-180,Robin (F),40,29,29,29,22
-181,Robin (M),40,29,29,29,22
+180,Robin (M),40,29,29,29,22
+181,Robin (F),40,29,29,29,22
 182,Boey,43,29,27,32,18
 183,Winter Zephiel,48,38,19,38,36
 184,Hector,52,36,24,37,19
@@ -539,8 +539,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 537,Pirate Brigid,41,37,40,30,19
 538,Eleonora,42,37,38,25,24
 539,Legendary Xander,40,42,41,35,17
-540,Lucina,43,34,36,25,19
-541,Masked Marth,43,34,36,25,19
+540,Masked Marth,43,34,36,25,19
+541,Lucina,43,34,36,25,19
 542,Fallen Ike,40,35,42,32,23
 543,Winter Ignatz,42,35,40,31,37
 544,Winter Sothis,44,35,41,30,35
@@ -658,8 +658,8 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 656,Volke,40,41,43,28,25
 657,Fallen Lilith,39,40,43,29,33
 658,Ascended Tiki (Young),38,42,44,32,36
-659,Shinon,40,38,42,27,24
-660,Hugh,40,38,42,27,24
+659,Hugh,40,38,42,27,24
+660,Shinon,40,38,42,27,24
 661,Halloween Sophia,37,38,23,27,42
 662,Ricken,40,43,39,24,30
 663,Azura (Young),36,33,29,17,25
