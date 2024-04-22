@@ -85,11 +85,18 @@ impl<'a> FehCurrent<'a> {
   // Add num_merges # of merges to FehCurrent, updates self.current_stats
   pub fn add_merges(&mut self, num_merges: usize) -> &mut Self {
     let stat_vec: &mut VecF = self.current_stats.as_mut().unwrap();
+    let priority_list: &[u8] = self.stat_priority_list.as_ref().unwrap();
     let mut merges_at: usize = 0;
     
     while merges_at < num_merges {
-      stat_vec.set(self.merge_idx.0, stat_vec.get(self.merge_idx.0) + 1f32);
-      stat_vec.set(self.merge_idx.1, stat_vec.get(self.merge_idx.1) + 1f32);
+      let (m_idx1, m_idx2) = (
+        priority_list[self.merge_idx.0] as usize, 
+        priority_list[self.merge_idx.1] as usize
+      );
+
+      stat_vec.set(m_idx1, stat_vec.get(m_idx1) + 1f32);
+      stat_vec.set(m_idx2, stat_vec.get(m_idx2) + 1f32);
+      
       self.merge_idx.0 = (self.merge_idx.0 + 2) % 5;
       self.merge_idx.1 = (self.merge_idx.1 + 2) % 5;
       merges_at += 1;
