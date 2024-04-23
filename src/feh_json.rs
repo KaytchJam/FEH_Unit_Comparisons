@@ -1,11 +1,15 @@
 use reqwest::{RequestBuilder, Response};
 use serde::{Serialize, Deserialize};
+use serde_json::Value;
 use std::collections::HashMap;
+
 use super::{utils::stats_structs::vec_f::VecF, FehUnit, DistanceMetric};
 
 use std::fs::File;
 use std::io::Write;
 use std::path::Path;
+
+const NAMES_TO_SKIP: [&str;2] = ["Lance Knight", "Axe Fighter"];
 
 // FOR JSON SERIALIZATION
 #[derive(Serialize, Deserialize, Debug)]
@@ -111,6 +115,59 @@ fn extract_data(data: &str) -> serde_json::Result<HashMap<String,FehUnit>> {
     }
   
     return Ok(unit_map);
+}
+
+const HP_FIELD : &str = "field_hp_level_40_middle";
+const ATK_FIELD: &str = "field_atk_level_40_middle";
+const SPD_FIELD: &str = "field_spd_level_40_middle";
+const DEF_FIELD: &str = "field_def_level_40_middle";
+const RES_FIELD: &str = "field_res_level_40_middle";
+const FIELDS: [&str; 5] = [HP_FIELD, ATK_FIELD, SPD_FIELD, DEF_FIELD, RES_FIELD];
+
+fn get_stats_mod(v: &mut Value) -> VecF {
+  return VecF::from(
+    FIELDS
+      .iter()
+      .map(|f| {
+        String::from(v[f]
+          .as_str().unwrap())
+          .parse::<i32>()
+          .expect("Failure to parse int") as f32
+      }
+    ).collect::<Vec<f32>>()
+  );
+}
+
+/// Extract the JSON data
+fn extract_5_star_data(data: &str) -> serde_json::Result<HashMap<String, FehUnit>> {
+  let mut unit_map: HashMap<String,FehUnit> = HashMap::new();
+  let mut as_serde: serde_json::Value = serde_json::from_str(data)?;
+
+  const APOSTROPHE: &str = "&#039;";
+  for unit in as_serde.as_array_mut().unwrap().into_iter() {
+    let unit_name = unit["title"].as_str().unwrap().replace(APOSTROPHE, "'");
+    if NAMES_TO_SKIP.contains(&unit_name.as_str()) { continue; }
+    unit_map.insert(
+    String::from(unit_name.clone()).to_ascii_uppercase(), 
+    FehUnit { 
+      name: String::from(unit_name), 
+      stats: get_stats_mod(unit)
+    });
+  }
+
+  return Ok(unit_map);
+}
+
+// Generate a hashmap from the JSON FEH Unit Data
+pub fn create_unit_dataset_mod() -> HashMap<String, FehUnit> {
+  const GAMEPRESS_JSON_URL: &str = "https://gamepress.gg/sites/default/files/aggregatedjson/heroes-5star-FEH.json?361373948797382444";
+
+  // retrive json
+  let data: String = attempt_request(String::from(GAMEPRESS_JSON_URL), 3);
+  println!("HTTP Request to Gamepress successful.");
+
+  // fill in our "all_units" vector
+  return extract_5_star_data(data.as_str()).expect("Error while parsing JSON");
 }
 
 // Generate a hashmap from the JSON FEH Unit Data

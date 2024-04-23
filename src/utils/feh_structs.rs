@@ -96,7 +96,7 @@ impl<'a> FehCurrent<'a> {
 
       stat_vec.set(m_idx1, stat_vec.get(m_idx1) + 1f32);
       stat_vec.set(m_idx2, stat_vec.get(m_idx2) + 1f32);
-      
+
       self.merge_idx.0 = (self.merge_idx.0 + 2) % 5;
       self.merge_idx.1 = (self.merge_idx.1 + 2) % 5;
       merges_at += 1;
@@ -153,6 +153,7 @@ pub enum DistanceMetric {
   MINKOWKSI = 3
 }
 
+// https://arxiv.org/pdf/2003.11180v2.pdf
 impl DistanceMetric {
   const METRICS: [DistanceMetric; 4] = [Self::EUCLIDEAN, Self::COSINE, Self::MANHATTAN, Self::MINKOWKSI];
 

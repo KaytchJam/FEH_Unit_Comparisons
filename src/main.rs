@@ -60,8 +60,7 @@ fn retrieve_feh_unit(all_units: &HashMap<String, FehUnit>, user_in: String, num_
 
 fn main() {
   // init
-  let all_units: HashMap<String, FehUnit> = feh_json::create_unit_dataset();
-  feh_json::dataset_to_csv(&all_units, CSV_OUTPUT_PATH);
+  let all_units: HashMap<String, FehUnit> = feh_json::create_unit_dataset_mod();
   let mut cur: FehCurrent = FehCurrent::new();
 
   // Get user input
