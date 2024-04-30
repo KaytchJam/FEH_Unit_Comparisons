@@ -2,7 +2,7 @@ mod utils;
 mod feh_json;
 
 use std::collections::HashMap;
-use crate::utils::feh_structs::{DistanceMetric, FehCurrent, FehUnit};
+use crate::{feh_json::dataset_to_csv, utils::feh_structs::{DistanceMetric, FehCurrent, FehUnit}};
 
 // CONSTANTS
 const CSV_OUTPUT_PATH: &str = "output/gamepress_feh_stats.csv";
@@ -61,6 +61,7 @@ fn retrieve_feh_unit(all_units: &HashMap<String, FehUnit>, user_in: String, num_
 fn main() {
   // init
   let all_units: HashMap<String, FehUnit> = feh_json::create_unit_dataset_mod();
+  dataset_to_csv(&all_units, CSV_OUTPUT_PATH);
   let mut cur: FehCurrent = FehCurrent::new();
 
   // Get user input
