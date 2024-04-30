@@ -6,1003 +6,1006 @@ Rank,Title,HP,ATK,SPD,DEF,RES
 4,Oboro,40,32,26,35,24
 5,Reinhardt (WT),40,35,23,31,28
 6,Berkut,43,34,22,31,24
-7,Death Knight,40,35,25,30,27
-8,Groom Zelot,41,37,25,39,25
-9,Shiro,41,35,30,35,22
-10,Alfonse,43,35,25,32,22
-11,Silque,39,33,23,35,31
-12,Legendary Sigurd,41,41,23,37,26
-13,Legendary Ike,41,36,30,35,21
-14,Michalis,43,34,26,35,19
-15,Hríd,41,37,17,36,26
-16,Halloween Jakob,42,35,23,33,32
-17,Fallen Berkut,40,35,17,35,30
-18,Spring Camilla,39,35,25,30,19
+7,Shiro,41,35,30,35,22
+8,Alfonse,43,35,25,32,22
+9,Death Knight,40,35,25,30,27
+10,Silque,39,33,23,35,31
+11,Groom Zelot,41,37,25,39,25
+12,Veronica,41,35,22,29,21
+13,Legendary Sigurd,41,41,23,37,26
+14,Hríd,41,37,17,36,26
+15,Michalis,43,34,26,35,19
+16,Fallen Berkut,40,35,17,35,30
+17,Legendary Ike,41,36,30,35,21
+18,Halloween Jakob,42,35,23,33,32
 19,Valentine's Líf,39,39,25,30,25
-20,Legendary Chrom,41,42,26,34,25
+20,Donnel,43,35,29,32,23
 21,Brave Ike,43,36,28,35,20
 22,Fallen Orson,43,38,28,36,23
-23,Spring Henry,41,37,27,40,23
-24,Legendary Leif,40,38,22,29,27
-25,New Year Hríd,42,38,19,36,27
-26,Donnel,43,35,29,32,23
-27,Bantu,45,34,28,35,26
-28,Laslow,44,35,26,30,22
-29,Masquerade Quan,40,41,20,36,20
-30,Ephraim,45,35,25,32,20
-31,Soiree Reinhardt,38,34,21,27,25
-32,Duo Palla,40,39,31,33,24
-33,Reinhardt,38,32,23,27,25
-34,Laevatein,39,37,31,34,22
-35,Fallen Ashnard,43,37,21,35,31
-36,Myrrh,42,33,25,36,31
-37,Dimitri,40,36,29,34,18
-38,Cormag,42,36,32,34,23
-39,Eldigan,45,32,24,34,19
+23,Legendary Chrom,41,42,26,34,25
+24,Spring Camilla,39,35,25,30,19
+25,Bantu,45,34,28,35,26
+26,New Year Hríd,42,38,19,36,27
+27,Legendary Leif,40,38,22,29,27
+28,Spring Henry,41,37,27,40,23
+29,Fallen Ashnard,43,37,21,35,31
+30,Cormag,42,36,32,34,23
+31,Ephraim,45,35,25,32,20
+32,Myrrh,42,33,25,36,31
+33,Laevatein,39,37,31,34,22
+34,Dimitri,40,36,29,34,18
+35,Duo Palla,40,39,31,33,24
+36,Masquerade Quan,40,41,20,36,20
+37,Laslow,44,35,26,30,22
+38,Soiree Reinhardt,38,34,21,27,25
+39,Reinhardt,38,32,23,27,25
 40,Sonia,40,35,24,32,35
 41,Heath,40,35,33,33,27
-42,Spring Bartre,46,40,26,35,25
-43,Duo Ephraim,41,39,30,37,25
-44,Gunter,43,32,24,33,18
+42,Mustafa,45,38,25,36,28
+43,Gunter,43,32,24,33,18
+44,Eldigan,45,32,24,34,19
 45,Jorge,45,36,27,35,29
-46,Mustafa,45,38,25,36,28
-47,Valbar,49,35,25,38,26
-48,Legendary Ephraim,43,36,27,33,18
-49,Gerome,45,38,25,34,19
-50,Walhart,41,37,27,36,16
-51,Valentine Silque,40,28,22,32,29
-52,Bertram,45,37,27,38,26
-53,Summer Tiki (Adult),35,36,30,32,24
-54,Exalted Chrom,41,37,28,34,17
-55,Pirate Veronica,38,39,19,36,29
-56,New Year Alfonse,41,38,17,35,30
-57,Haar,45,37,25,36,18
-58,Lukas,45,35,22,38,17
-59,Helbindi,44,35,18,35,31
-60,Ares,40,36,30,33,18
-61,Seliph,47,34,24,30,22
-62,Garon,43,33,22,33,32
-63,Beruka,46,29,23,37,22
-64,Frederick,43,35,25,36,14
-65,Legendary Seliph,41,41,17,37,26
-66,Galle,46,38,22,38,28
-67,Valentine's Alfonse,43,38,25,37,31
-68,Halloween Dozla,45,38,29,35,27
-69,Winter Ephraim,45,41,23,36,29
-70,Legendary Hector,47,40,23,38,26
-71,Spring Xander,40,25,28,35,26
-72,Clive,45,33,25,32,19
-73,Conrad,40,31,22,34,35
-74,Fallen Robin (M),48,40,24,35,27
-75,Caineghis,47,37,23,37,30
-76,Spring Bruno,41,30,24,35,14
-77,Hoshidan Summer Xander,38,35,17,34,16
-78,Velouria,40,35,37,33,23
-79,Xander,44,32,24,37,17
-80,Winter Robin,45,35,34,35,25
-81,Masquerade Eldigan,43,38,26,37,18
+46,Duo Ephraim,41,39,30,37,25
+47,Spring Bartre,46,40,26,35,25
+48,Summer Tiki (Adult),35,36,30,32,24
+49,Ares,40,36,30,33,18
+50,Valbar,49,35,25,38,26
+51,Pirate Veronica,38,39,19,36,29
+52,New Year Alfonse,41,38,17,35,30
+53,Bertram,45,37,27,38,26
+54,Valentine Silque,40,28,22,32,29
+55,Walhart,41,37,27,36,16
+56,Garon,43,33,22,33,32
+57,Lukas,45,35,22,38,17
+58,Frederick,43,35,25,36,14
+59,Seliph,47,34,24,30,22
+60,Exalted Chrom,41,37,28,34,17
+61,Haar,45,37,25,36,18
+62,Helbindi,44,35,18,35,31
+63,Gerome,45,38,25,34,19
+64,Legendary Ephraim,43,36,27,33,18
+65,Beruka,46,29,23,37,22
+66,Conrad,40,31,22,34,35
+67,Fallen Gustav,40,41,25,38,30
+68,Spring Xander,40,25,28,35,26
+69,Xander,44,32,24,37,17
+70,Halloween Dozla,45,38,29,35,27
+71,Caineghis,47,37,23,37,30
+72,Hoshidan Summer Xander,38,35,17,34,16
+73,Galle,46,38,22,38,28
+74,Brave Ephraim,46,38,27,37,26
+75,Legendary Hector,47,40,23,38,26
+76,Valentine's Alfonse,43,38,25,37,31
+77,Winter Robin,45,35,34,35,25
+78,Edelgard,41,39,30,37,21
+79,Clive,45,33,25,32,19
+80,Altena,45,37,25,39,20
+81,Fallen Robin (M),48,40,24,35,27
 82,Arthur (Fates),43,32,29,30,24
-83,Fallen Gustav,40,41,25,38,30
-84,Brave Ephraim,46,38,27,37,26
-85,Altena,45,37,25,39,20
-86,Edelgard,41,39,30,37,21
-87,Valentine Conrad,39,32,23,33,35
-88,Tobin,46,31,27,33,26
-89,Mordecai,47,37,24,39,20
+83,Spring Bruno,41,30,24,35,14
+84,Valentine Conrad,39,32,23,33,35
+85,Masquerade Eldigan,43,38,26,37,18
+86,Winter Ephraim,45,41,23,36,29
+87,Legendary Seliph,41,41,17,37,26
+88,Velouria,40,35,37,33,23
+89,Hinata,47,32,24,36,18
 90,Halloween Kagero,41,38,21,32,33
-91,Hinata,47,32,24,36,18
-92,Luke,43,34,28,30,20
-93,Adrift Corrin (M),42,35,35,31,24
-94,Nowi,45,34,27,30,27
-95,Sigurd,41,35,32,34,17
-96,Sophia,40,33,19,28,29
-97,Summer Laevatein,38,38,16,31,26
-98,Nah,44,34,25,38,32
-99,Winter Cecilia,41,35,23,30,36
-100,Winter Eirika,42,36,23,30,34
-101,Líf,42,38,30,34,29
-102,Fernand,45,41,26,32,23
+91,Adrift Corrin (M),42,35,35,31,24
+92,Nah,44,34,25,38,32
+93,Winter Eirika,42,36,23,30,34
+94,Tobin,46,31,27,33,26
+95,Summer Laevatein,38,38,16,31,26
+96,Nowi,45,34,27,30,27
+97,Mordecai,47,37,24,39,20
+98,Sophia,40,33,19,28,29
+99,Luke,43,34,28,30,20
+100,Líf,42,38,30,34,29
+101,Winter Cecilia,41,35,23,30,36
+102,Sigurd,41,35,32,34,17
 103,Midori,41,41,30,34,21
-104,Saber,40,31,33,32,22
-105,New Year Camilla,40,33,35,31,23
-106,Gray,43,35,32,30,22
-107,Tibarn,41,38,31,34,18
-108,Ike,42,35,31,32,18
-109,Effie,50,40,22,33,23
-110,Halloween Ena,44,36,23,37,36
-111,Narcian,42,29,29,32,26
-112,Stahl,45,31,26,30,22
-113,Dieck,40,40,35,36,25
-114,Kjelle,47,40,22,37,28
-115,Lyon,41,34,21,26,30
-116,Seth,37,32,31,32,22
-117,Picnic Leo,37,33,21,27,28
-118,Valter,42,32,31,34,19
-119,Gordin,43,31,25,32,17
-120,Eyvel,41,33,35,38,25
-121,Brave Hector,48,37,22,39,28
-122,Minerva,40,31,33,32,22
-123,Nemesis,43,39,23,37,34
-124,Ymir,38,40,26,35,34
-125,Fallen Hardin,45,34,28,36,32
-126,Valentine's Chrom,40,44,27,40,26
-127,Valentian Palla,41,42,21,41,28
-128,Osian,42,35,36,33,27
-129,Tiki (Young),41,31,30,32,29
-130,Itsuki,41,37,30,33,32
-131,Robin (F),40,29,29,29,22
-132,Kana (F),40,30,34,33,26
-133,Keaton,45,41,24,38,19
-134,Limstella,41,39,23,32,36
-135,Hinoka,41,35,32,25,24
-136,Legendary Marth,40,34,36,32,21
-137,Finn,40,34,33,32,18
-138,Hector (LA),50,38,21,40,24
-139,Robin (M),40,29,29,29,22
-140,Yarne,40,35,33,32,17
-141,Young Minerva,40,36,37,35,19
-142,New Year Corrin (M),37,32,30,34,18
-143,Amelia,47,34,34,35,23
-144,Hawkeye,45,33,22,28,30
-145,Pirate Darros,46,36,32,37,21
-146,Seteth,44,36,36,32,24
-147,Astram,44,35,36,36,21
+104,Fernand,45,41,26,32,23
+105,Lyon,41,34,21,26,30
+106,Kjelle,47,40,22,37,28
+107,Narcian,42,29,29,32,26
+108,Valter,42,32,31,34,19
+109,Dieck,40,40,35,36,25
+110,Gordin,43,31,25,32,17
+111,Gray,43,35,32,30,22
+112,Minerva,40,31,33,32,22
+113,Ike,42,35,31,32,18
+114,Seth,37,32,31,32,22
+115,New Year Camilla,40,33,35,31,23
+116,Nemesis,43,39,23,37,34
+117,Effie,50,40,22,33,23
+118,Brave Hector,48,37,22,39,28
+119,Saber,40,31,33,32,22
+120,Tibarn,41,38,31,34,18
+121,Halloween Ena,44,36,23,37,36
+122,Eyvel,41,33,35,38,25
+123,Stahl,45,31,26,30,22
+124,Picnic Leo,37,33,21,27,28
+125,Amelia,47,34,34,35,23
+126,Limstella,41,39,23,32,36
+127,Tiki (Young),41,31,30,32,29
+128,Yarne,40,35,33,32,17
+129,Itsuki,41,37,30,33,32
+130,Robin (F),40,29,29,29,22
+131,Ymir,38,40,26,35,34
+132,Valentine's Chrom,40,44,27,40,26
+133,Legendary Marth,40,34,36,32,21
+134,Finn,40,34,33,32,18
+135,Hector (LA),50,38,21,40,24
+136,Young Minerva,40,36,37,35,19
+137,Fallen Hardin,45,34,28,36,32
+138,Kana (F),40,30,34,33,26
+139,Valentian Palla,41,42,21,41,28
+140,New Year Corrin (M),37,32,30,34,18
+141,Osian,42,35,36,33,27
+142,Keaton,45,41,24,38,19
+143,Hinoka,41,35,32,25,24
+144,Robin (M),40,29,29,29,22
+145,Flame Emperor,50,40,25,37,26
+146,Byleth (M),40,36,38,34,20
+147,Winter Mirabilis,39,36,17,34,36
 148,Duessel,41,39,18,39,31
-149,Legendary Robin (F),40,32,35,30,25
-150,Young Marth,41,36,37,32,26
-151,Byleth (M),40,36,38,34,20
-152,Summer Ylgr,42,35,36,30,25
-153,Ferdinand,41,32,35,30,24
-154,Summer Helbindi,44,36,18,37,33
-155,Corrin (M),42,32,32,28,24
-156,Groom Hinata,47,37,27,40,21
-157,Valentine's Alm,40,35,40,32,25
-158,Winter Mirabilis,39,36,17,34,36
-159,Ninja Heath,42,43,23,40,30
-160,Travant,46,36,26,40,18
-161,Summer Tiki (Young),40,33,37,32,26
-162,Spring Myrrh,40,38,25,40,35
-163,Libra,40,35,32,28,29
-164,Hector,52,36,24,37,19
-165,Flame Emperor,50,40,25,37,26
-166,Hostile Springs Ryoma,40,35,36,28,23
-167,Petrine,42,35,37,30,24
-168,Ross,47,38,31,32,24
-169,Lex,45,36,30,38,19
-170,Linus,42,37,33,32,19
-171,Summer Xander,43,32,30,36,16
-172,Winter Lissa,43,33,30,35,34
-173,Sheena,45,30,25,36,33
-174,Halloween Ilyana,41,38,23,30,37
-175,Legendary Roy,39,34,38,32,26
-176,Spring Alfonse,41,35,33,30,18
-177,Valentine's Lissa,42,35,25,37,40
-178,Valentine Faye,43,40,23,35,38
-179,Halloween Myrrh,46,38,23,40,32
-180,Matthis,41,43,32,38,25
-181,Mirabilis,38,34,18,32,35
-182,Nailah,40,31,37,32,23
-183,Jeralt,41,43,26,39,30
-184,Bridal Sophia,38,40,19,36,34
-185,Mamori,43,37,24,42,33
-186,Halloween Dorcas,49,41,25,37,21
-187,Fallen Celica,40,35,35,27,26
-188,Cherche,46,38,25,32,16
-189,Winter Tharja,43,34,18,34,36
-190,Bridal Tanith,37,34,36,33,21
-191,Roshea,41,38,35,38,21
-192,Chrom,47,37,25,31,17
-193,Pirate Tibarn,42,41,30,36,18
-194,Gwendolyn,49,30,24,38,28
-195,Boey,43,29,27,32,18
-196,Spring Narcian,43,35,34,37,18
-197,Idunn,45,35,26,39,34
-198,Henry,45,23,22,32,25
-199,Rearmed Líf,41,43,29,41,26
-200,Linhardt,39,34,25,30,38
-201,Plegian Kris,41,37,37,31,22
-202,Flame Múspell,40,43,26,41,30
-203,Bridal Nailah,40,35,41,31,25
-204,Catria,39,31,34,29,25
-205,Fallen Tiki (Young),45,36,34,37,28
-206,Byleth (F),40,34,40,33,21
-207,Brave Alm,42,38,35,37,20
-208,Sharena,43,32,32,29,22
-209,Zelgius,46,36,33,38,21
-210,New Year Velouria,41,38,40,34,23
-211,Duma,48,40,21,34,31
-212,Spring Minerva,41,36,38,35,18
+149,Corrin (M),42,32,32,28,24
+150,Ferdinand,41,32,35,30,24
+151,Spring Myrrh,40,38,25,40,35
+152,Libra,40,35,32,28,29
+153,Petrine,42,35,37,30,24
+154,Travant,46,36,26,40,18
+155,Young Marth,41,36,37,32,26
+156,Legendary Robin (F),40,32,35,30,25
+157,Ninja Heath,42,43,23,40,30
+158,Ross,47,38,31,32,24
+159,Seteth,44,36,36,32,24
+160,Pirate Darros,46,36,32,37,21
+161,Hawkeye,45,33,22,28,30
+162,Astram,44,35,36,36,21
+163,Valentine's Alm,40,35,40,32,25
+164,Summer Ylgr,42,35,36,30,25
+165,Lex,45,36,30,38,19
+166,Summer Helbindi,44,36,18,37,33
+167,Groom Hinata,47,37,27,40,21
+168,Summer Tiki (Young),40,33,37,32,26
+169,Hector,52,36,24,37,19
+170,Hostile Springs Ryoma,40,35,36,28,23
+171,Mamori,43,37,24,42,33
+172,Halloween Myrrh,46,38,23,40,32
+173,Jeralt,41,43,26,39,30
+174,Summer Xander,43,32,30,36,16
+175,Matthis,41,43,32,38,25
+176,Legendary Roy,39,34,38,32,26
+177,Spring Alfonse,41,35,33,30,18
+178,Cherche,46,38,25,32,16
+179,Idunn,45,35,26,39,34
+180,Gwendolyn,49,30,24,38,28
+181,Henry,45,23,22,32,25
+182,Sheena,45,30,25,36,33
+183,Halloween Dorcas,49,41,25,37,21
+184,Roshea,41,38,35,38,21
+185,Spring Narcian,43,35,34,37,18
+186,Winter Lissa,43,33,30,35,34
+187,Bridal Sophia,38,40,19,36,34
+188,Bridal Tanith,37,34,36,33,21
+189,Chrom,47,37,25,31,17
+190,Mirabilis,38,34,18,32,35
+191,Pirate Tibarn,42,41,30,36,18
+192,Valentine's Lissa,42,35,25,37,40
+193,Winter Tharja,43,34,18,34,36
+194,Boey,43,29,27,32,18
+195,Fallen Celica,40,35,35,27,26
+196,Linus,42,37,33,32,19
+197,Nailah,40,31,37,32,23
+198,Valentine Faye,43,40,23,35,38
+199,Halloween Ilyana,41,38,23,30,37
+200,Sharena,43,32,32,29,22
+201,Linhardt,39,34,25,30,38
+202,Halloween Hector,47,41,26,39,27
+203,Fallen Tiki (Young),45,36,34,37,28
+204,Brave Alm,42,38,35,37,20
+205,Plegian Kris,41,37,37,31,22
+206,Alm,45,33,30,28,22
+207,Spring Chrom,43,35,32,28,20
+208,Catria,39,31,34,29,25
+209,Abel,39,33,32,25,25
+210,Rearmed Líf,41,43,29,41,26
+211,Kana (M),40,31,33,31,29
+212,Leon,39,34,30,30,15
 213,Fallen Ike,40,35,42,32,23
-214,Kana (M),40,31,33,31,29
-215,Rearmed Alfred,40,45,25,43,27
-216,Leon,39,34,30,30,15
-217,Alm,45,33,30,28,22
+214,Rearmed Alfred,40,45,25,43,27
+215,Palla,42,31,31,28,26
+216,Duma,48,40,21,34,31
+217,Bridal Nailah,40,35,41,31,25
 218,Marth,41,31,34,29,23
-219,Palla,42,31,31,28,26
-220,Sirius (Unit),40,34,37,35,16
-221,Abel,39,33,32,25,25
-222,Brave Eliwood,40,37,35,32,18
-223,Halloween Hector,47,41,26,39,27
-224,Spring Chrom,43,35,32,28,20
-225,Brigand Boss,45,42,35,35,24
-226,Summer Joshua,40,36,39,28,24
-227,Fallen Corrin (M),42,38,38,33,26
-228,Owain,41,32,37,31,22
-229,Picnic Lukas,51,37,21,42,22
-230,Spring Luthier,41,38,36,31,27
-231,Kempf,42,33,33,27,26
-232,Balthus,47,42,24,37,31
-233,Nephenee,37,31,35,34,20
-234,Plegian Raphael,48,42,28,38,23
-235,Quan,44,37,29,31,16
-236,Summer Seth,40,40,38,31,24
-237,New Year Kyza,45,39,26,41,30
-238,Corrin (F),41,27,34,34,21
-239,Young Lyon,38,38,18,34,37
-240,Phina,40,35,37,26,23
-241,Rennac,39,37,42,34,25
-242,Azama,43,21,26,32,25
-243,Sothis,41,34,39,32,27
-244,Subaki,40,25,35,35,22
-245,Leif,40,32,38,30,23
-246,Fallen Corrin (F),43,35,37,31,27
-247,Fallen Morgan (M),38,37,17,35,38
-248,New Year Laegjarn,38,32,35,35,17
-249,Roy (LA),34,35,19,27,30
-250,Ayra,41,33,37,31,21
-251,Letizia,38,40,16,35,34
-252,Panne,41,29,34,30,23
-253,Summer Frederick,40,32,31,28,18
-254,Sylvain,40,44,35,37,23
-255,Leo,39,29,22,25,30
-256,Hatari Nailah,40,39,43,35,25
-257,Jakob,39,29,31,25,24
-258,Zephiel,55,35,16,38,24
-259,Summer Freyr,41,38,16,38,35
-260,Norne,42,32,36,31,27
-261,Summer Ogma,44,38,38,35,21
-262,Kris (F),40,37,40,30,25
-263,Cain,42,32,32,27,21
-264,Oscar,40,33,34,26,21
-265,Hostile Springs Sakura,36,35,32,26,21
-266,Mareeta,41,35,42,31,23
-267,Ninja Corrin (M),41,40,38,35,28
-268,Legendary Myrrh,40,39,25,42,36
-269,Naga (Unit),37,30,36,33,26
-270,Winter Chrom,51,40,19,35,29
-271,Roderick,40,31,34,25,24
-272,Laegjarn,41,32,36,36,17
-273,Joshua,40,31,35,30,28
-274,Legendary Tiki (Young),45,34,35,37,29
-275,Soleil,37,38,35,28,24
-276,Faye,42,30,25,26,31
-277,Larcei,41,36,40,30,25
-278,Spring Loki,39,31,34,27,25
-279,Reginn,38,36,40,30,24
-280,Altina,42,38,20,30,36
-281,Ryoma,41,34,35,27,21
-282,Halloween Kurthnaga,45,39,27,36,35
-283,Ninja Laevatein,41,42,18,37,34
-284,Brave Roy,38,32,34,26,24
-285,Ninja Haar,44,42,24,44,28
-286,Ash,41,39,27,41,34
-287,Lissa,39,26,25,28,30
-288,Erinys,39,37,41,32,23
-289,Bartre,49,36,25,33,13
-290,Scáthach,43,42,30,43,24
-291,Lachesis,39,32,25,22,30
-292,Shigure,40,33,37,27,25
-293,Kris (M),40,37,40,30,25
-294,Python,38,32,35,31,20
-295,Adrift Corrin (F),41,31,37,32,27
-296,Winter Jaffar,44,35,37,31,27
-297,Jamke,38,36,32,29,17
-298,Legendary Eliwood,37,36,34,33,16
-299,Valentian Catria,41,38,36,27,24
-300,Vyland,47,41,30,36,19
-301,Fallen Lyon,40,40,16,32,35
-302,Siegbert,41,34,35,31,16
-303,Julian,40,38,38,33,18
-304,Brave Gatekeeper,41,37,17,40,36
-305,Groom Marth,40,31,36,30,20
-306,Brave Celica,38,33,39,29,24
-307,Spring Fir,39,35,41,28,24
-308,Cordelia,40,35,35,22,25
-309,Kent,42,37,40,30,24
-310,Kiragi,40,38,43,37,23
+219,Sirius (Unit),40,34,37,35,16
+220,Brave Eliwood,40,37,35,32,18
+221,Flame Múspell,40,43,26,41,30
+222,Byleth (F),40,34,40,33,21
+223,Spring Minerva,41,36,38,35,18
+224,Zelgius,46,36,33,38,21
+225,New Year Velouria,41,38,40,34,23
+226,Rennac,39,37,42,34,25
+227,Quan,44,37,29,31,16
+228,Leo,39,29,22,25,30
+229,Nephenee,37,31,35,34,20
+230,Owain,41,32,37,31,22
+231,Balthus,47,42,24,37,31
+232,Fallen Corrin (F),43,35,37,31,27
+233,Panne,41,29,34,30,23
+234,Kempf,42,33,33,27,26
+235,Ayra,41,33,37,31,21
+236,Plegian Raphael,48,42,28,38,23
+237,Picnic Lukas,51,37,21,42,22
+238,New Year Laegjarn,38,32,35,35,17
+239,Subaki,40,25,35,35,22
+240,Fallen Corrin (M),42,38,38,33,26
+241,Spring Luthier,41,38,36,31,27
+242,Summer Seth,40,40,38,31,24
+243,Sylvain,40,44,35,37,23
+244,Fallen Morgan (M),38,37,17,35,38
+245,Sothis,41,34,39,32,27
+246,Leif,40,32,38,30,23
+247,Summer Joshua,40,36,39,28,24
+248,Azama,43,21,26,32,25
+249,Corrin (F),41,27,34,34,21
+250,Roy (LA),34,35,19,27,30
+251,Brigand Boss,45,42,35,35,24
+252,Letizia,38,40,16,35,34
+253,New Year Kyza,45,39,26,41,30
+254,Phina,40,35,37,26,23
+255,Summer Frederick,40,32,31,28,18
+256,Young Lyon,38,38,18,34,37
+257,Brave Roy,38,32,34,26,24
+258,Larcei,41,36,40,30,25
+259,Shigure,40,33,37,27,25
+260,Lachesis,39,32,25,22,30
+261,Jakob,39,29,31,25,24
+262,Bartre,49,36,25,33,13
+263,Priam,40,41,40,35,26
+264,Ninja Corrin (M),41,40,38,35,28
+265,Roderick,40,31,34,25,24
+266,Ninja Laevatein,41,42,18,37,34
+267,Joshua,40,31,35,30,28
+268,Mareeta,41,35,42,31,23
+269,Laegjarn,41,32,36,36,17
+270,Oscar,40,33,34,26,21
+271,Lissa,39,26,25,28,30
+272,Winter Jaffar,44,35,37,31,27
+273,Summer Ogma,44,38,38,35,21
+274,Jamke,38,36,32,29,17
+275,Kris (F),40,37,40,30,25
+276,Kris (M),40,37,40,30,25
+277,Ninja Haar,44,42,24,44,28
+278,Scáthach,43,42,30,43,24
+279,Cain,42,32,32,27,21
+280,Erinys,39,37,41,32,23
+281,Norne,42,32,36,31,27
+282,Legendary Eliwood,37,36,34,33,16
+283,Python,38,32,35,31,20
+284,Winter Chrom,51,40,19,35,29
+285,Soleil,37,38,35,28,24
+286,Valentian Catria,41,38,36,27,24
+287,Hatari Nailah,40,39,43,35,25
+288,Hostile Springs Sakura,36,35,32,26,21
+289,Ryoma,41,34,35,27,21
+290,Ash,41,39,27,41,34
+291,Legendary Tiki (Young),45,34,35,37,29
+292,Faye,42,30,25,26,31
+293,Spring Loki,39,31,34,27,25
+294,Adrift Corrin (F),41,31,37,32,27
+295,Summer Freyr,41,38,16,38,35
+296,Naga (Unit),37,30,36,33,26
+297,Legendary Myrrh,40,39,25,42,36
+298,Reginn,38,36,40,30,24
+299,Zephiel,55,35,16,38,24
+300,Halloween Kurthnaga,45,39,27,36,35
+301,Altina,42,38,20,30,36
+302,Kent,42,37,40,30,24
+303,Raven,41,34,35,25,22
+304,Brave Celica,38,33,39,29,24
+305,Fallen Lyon,40,40,16,32,35
+306,Spring Fir,39,35,41,28,24
+307,Askr,40,43,26,43,31
+308,Kiragi,40,38,43,37,23
+309,Black Knight,48,34,34,35,18
+310,Halloween Rolf,40,30,36,28,23
 311,Tanith,41,36,40,32,28
 312,Marcia,41,37,41,32,26
-313,Camus,42,32,33,31,17
+313,Cordelia,40,35,35,22,25
 314,Flavia,41,40,41,36,23
-315,Halloween Rolf,40,30,36,28,23
-316,Black Knight,48,34,34,35,18
-317,Raven,41,34,35,25,22
-318,Askr,40,43,26,43,31
-319,Sedgar,41,36,39,27,24
-320,Eitri,37,41,29,30,31
-321,Legendary Alm,40,37,37,26,22
-322,Kiria,38,41,20,29,34
-323,Echidna,45,34,36,30,27
-324,Winter Fae,45,35,26,33,41
-325,Mila,41,37,17,40,37
-326,Thea,37,31,35,31,28
-327,Thief Rickard,38,38,42,33,25
-328,Shannan,43,38,36,37,18
-329,New Year Gunnthrá,38,34,37,27,26
-330,Winter Hilda (Three Houses),44,39,38,37,26
-331,Spring Idunn,46,37,26,37,38
-332,Valentine's Rudolf,46,43,21,41,29
-333,Summer Innes,42,33,37,30,20
-334,Ascended Mareeta,40,40,43,34,25
-335,Fallen Morgan (F),40,39,17,41,35
-336,Legendary Corrin (F),41,38,40,34,29
-337,Teatime Sigurd,40,46,31,35,16
-338,Igrene,42,37,37,26,24
-339,Pirate Geese,46,38,35,32,21
-340,Gharnef,38,30,34,27,23
-341,Halloween Robin (F),40,40,17,37,38
-342,Winter Marth,42,36,41,30,25
-343,Summer Norne,42,37,39,31,27
-344,Rath,41,33,35,23,24
-345,Zeke,40,40,15,38,35
-346,Caellach,45,40,27,31,33
-347,Cecilia,36,32,25,22,29
-348,Benny,48,35,23,44,34
-349,Hilda (Three Houses),43,37,37,28,23
-350,Valentine's Ike,45,37,38,35,19
-351,New Year Keaton,48,41,24,43,20
-352,Picnic Flora,43,38,22,29,38
-353,Valentine's Greil,47,41,18,38,30
-354,Fallen Takumi,37,31,34,25,24
-355,Summer Lyon,42,42,21,37,39
-356,Brave Lucina,41,34,36,27,19
-357,New Year Yarne,40,43,40,35,21
-358,Kamui,44,38,41,36,22
-359,Brady,41,33,32,23,28
-360,Jeorge,37,32,32,24,22
-361,Soiree Nephenee,37,35,36,24,25
-362,Sothe,39,36,33,22,21
-363,Ranulf,40,30,37,33,17
-364,Mikoto,38,35,32,20,26
+315,Groom Marth,40,31,36,30,20
+316,Siegbert,41,34,35,31,16
+317,Camus,42,32,33,31,17
+318,Sedgar,41,36,39,27,24
+319,Julian,40,38,38,33,18
+320,Vyland,47,41,30,36,19
+321,Brave Gatekeeper,41,37,17,40,36
+322,Cecilia,36,32,25,22,29
+323,Valentine's Greil,47,41,18,38,30
+324,Valentine's Ike,45,37,38,35,19
+325,Spring Idunn,46,37,26,37,38
+326,Winter Hilda (Three Houses),44,39,38,37,26
+327,Legendary Corrin (F),41,38,40,34,29
+328,New Year Gunnthrá,38,34,37,27,26
+329,Summer Norne,42,37,39,31,27
+330,Shannan,43,38,36,37,18
+331,Teatime Sigurd,40,46,31,35,16
+332,Mila,41,37,17,40,37
+333,New Year Keaton,48,41,24,43,20
+334,Halloween Robin (F),40,40,17,37,38
+335,Thief Rickard,38,38,42,33,25
+336,Zeke,40,40,15,38,35
+337,Winter Marth,42,36,41,30,25
+338,Thea,37,31,35,31,28
+339,Hilda (Three Houses),43,37,37,28,23
+340,Valentine's Rudolf,46,43,21,41,29
+341,Pirate Geese,46,38,35,32,21
+342,Kiria,38,41,20,29,34
+343,Caellach,45,40,27,31,33
+344,Legendary Alm,40,37,37,26,22
+345,Rath,41,33,35,23,24
+346,Fallen Morgan (F),40,39,17,41,35
+347,Gharnef,38,30,34,27,23
+348,Echidna,45,34,36,30,27
+349,Ascended Mareeta,40,40,43,34,25
+350,Igrene,42,37,37,26,24
+351,Eitri,37,41,29,30,31
+352,Winter Fae,45,35,26,33,41
+353,Summer Innes,42,33,37,30,20
+354,Picnic Flora,43,38,22,29,38
+355,Benny,48,35,23,44,34
+356,Legendary Robin (M),40,45,30,31,31
+357,Ranulf,40,30,37,33,17
+358,New Year Yarne,40,43,40,35,21
+359,Fallen Takumi,37,31,34,25,24
+360,Brave Lucina,41,34,36,27,19
+361,Kamui,44,38,41,36,22
+362,Mikoto,38,35,32,20,26
+363,Jeorge,37,32,32,24,22
+364,Forsyth,47,40,20,39,33
 365,Farina,39,36,38,30,30
-366,Legendary Robin (M),40,45,30,31,31
-367,Halloween Tiki,39,39,42,32,25
-368,Valentine's Henriette,42,40,18,35,40
-369,Forsyth,47,40,20,39,33
-370,Thórr,40,44,19,41,34
-371,Fallen Mareeta,42,33,41,29,23
-372,Winter Felix,44,38,37,32,29
-373,Eleonora,42,37,38,25,24
-374,Barst,46,33,32,30,17
-375,Rutger,44,32,39,29,24
-376,Galzus,40,43,41,36,22
-377,Groom Roy,39,38,42,30,25
-378,Brave Dimitri,41,40,36,40,19
-379,Azelle,41,37,39,26,23
-380,Perceval,38,32,37,28,27
-381,Kaden,38,32,36,25,25
-382,Young Tana,40,39,41,29,23
-383,Celica,39,32,33,22,22
-384,Jill,40,39,40,36,17
+366,Halloween Tiki,39,39,42,32,25
+367,Sothe,39,36,33,22,21
+368,Summer Lyon,42,42,21,37,39
+369,Brady,41,33,32,23,28
+370,Valentine's Henriette,42,40,18,35,40
+371,Soiree Nephenee,37,35,36,24,25
+372,New Year Laevatein,33,36,30,27,18
+373,Thórr,40,44,19,41,34
+374,Melady,41,40,33,41,17
+375,Spring Saleh,41,37,36,26,28
+376,Ótr,41,41,17,40,35
+377,Ninja Navarre,41,39,42,31,23
+378,Barst,46,33,32,30,17
+379,Hatari Deen,43,36,39,27,23
+380,Eleonora,42,37,38,25,24
+381,Iago,42,38,27,23,32
+382,Kaden,38,32,36,25,25
+383,Guy,44,37,43,33,25
+384,Summer Ashe,40,37,41,32,18
 385,Summer Wolt,40,34,34,25,17
-386,Takumi,40,32,33,25,18
-387,Klein,40,31,33,20,24
-388,Legendary Ryoma,41,34,39,28,20
-389,Rinkah,40,34,39,41,18
-390,Iago,42,38,27,23,32
-391,Dagr,41,39,41,30,25
-392,Fae,46,33,28,25,30
-393,Summer Ashe,40,37,41,32,18
-394,Ninja Zihark,43,37,42,30,24
-395,Ninja Laegjarn,40,44,19,37,38
-396,Gerik,47,37,36,30,22
-397,Hatari Deen,43,36,39,27,23
-398,New Year Laevatein,33,36,30,27,18
-399,Scion Larcei,40,39,42,33,28
-400,Spring Marisa,42,33,38,28,21
-401,Guy,44,37,43,33,25
-402,Fjorm,39,30,31,30,34
-403,Melady,41,40,33,41,17
-404,Spring Saleh,41,37,36,26,28
-405,Ninja Navarre,41,39,42,31,23
-406,Winter Altina,42,40,18,37,39
-407,Rhajat,36,35,34,21,24
-408,Ótr,41,41,17,40,35
-409,Sumia,39,30,39,29,25
-410,Tana,36,34,36,25,25
-411,Shez (M),40,43,41,37,26
-412,Winter Zephiel,48,38,19,38,36
-413,Performing Shigure,34,31,29,21,24
-414,Olivia (YT),36,30,34,26,23
-415,Winter Artur,43,41,19,35,41
-416,Hugh,40,38,42,27,24
-417,Halloween Naga,38,42,31,35,37
-418,Ganglöt,40,44,30,38,35
-419,Oliver,42,32,20,23,34
-420,Ingrid,37,35,40,28,27
-421,Nifl,39,38,40,27,23
-422,Halloween L'Arachel,39,36,34,22,20
-423,Est,36,35,30,24,32
-424,Patty,40,41,45,37,24
-425,Lilina (LA),34,35,30,20,26
-426,Ophelia,38,37,33,20,23
-427,Flame Rinkah,40,37,41,44,25
-428,Summer Fiora,40,32,37,26,28
-429,Pirate Brigid,41,37,40,30,19
-430,Young Eirika,40,36,43,30,28
-431,Sain,41,42,38,36,18
+386,Dagr,41,39,41,30,25
+387,Winter Altina,42,40,18,37,39
+388,Jill,40,39,40,36,17
+389,Fae,46,33,28,25,30
+390,Groom Roy,39,38,42,30,25
+391,Young Tana,40,39,41,29,23
+392,Fallen Mareeta,42,33,41,29,23
+393,Klein,40,31,33,20,24
+394,Rhajat,36,35,34,21,24
+395,Rutger,44,32,39,29,24
+396,Fjorm,39,30,31,30,34
+397,Winter Felix,44,38,37,32,29
+398,Ninja Laegjarn,40,44,19,37,38
+399,Gerik,47,37,36,30,22
+400,Legendary Ryoma,41,34,39,28,20
+401,Ninja Zihark,43,37,42,30,24
+402,Galzus,40,43,41,36,22
+403,Azelle,41,37,39,26,23
+404,Brave Dimitri,41,40,36,40,19
+405,Scion Larcei,40,39,42,33,28
+406,Tana,36,34,36,25,25
+407,Takumi,40,32,33,25,18
+408,Sumia,39,30,39,29,25
+409,Spring Marisa,42,33,38,28,21
+410,Rinkah,40,34,39,41,18
+411,Perceval,38,32,37,28,27
+412,Celica,39,32,33,22,22
+413,Hana,37,35,36,23,26
+414,Basilio,48,43,33,36,21
+415,Young Eirika,40,36,43,30,28
+416,Olivia (YT),36,30,34,26,23
+417,Performing Shigure,34,31,29,21,24
+418,Summer Fiora,40,32,37,26,28
+419,Mia,38,32,40,28,25
+420,Bridal Tharja,39,35,35,21,21
+421,Holst,42,43,41,35,26
+422,Shez (M),40,43,41,37,26
+423,Oliver,42,32,20,23,34
+424,Múspell,40,41,16,39,37
+425,Pirate Brigid,41,37,40,30,19
+426,Flame Mordecai,48,43,29,43,24
+427,Halloween L'Arachel,39,36,34,22,20
+428,Shinon,40,38,42,27,24
+429,Ophelia,38,37,33,20,23
+430,Eliwood (LA),47,38,32,29,29
+431,Flame Rinkah,40,37,41,44,25
 432,Seiros,40,42,18,37,40
-433,Holst,42,43,41,35,26
+433,Nagi,46,37,19,36,41
 434,Valentine's Owain,41,38,42,31,21
-435,Mia,38,32,40,28,25
-436,Shinon,40,38,42,27,24
-437,Nagi,46,37,19,36,41
-438,Orochi,40,40,24,24,37
-439,Annette,40,39,36,28,30
-440,Hana,37,35,36,23,26
-441,Basilio,48,43,33,36,21
-442,Bridal Tharja,39,35,35,21,21
-443,Flame Mordecai,48,43,29,43,24
-444,Spring Maria,35,37,40,40,25
-445,Múspell,40,41,16,39,37
-446,Eliwood (LA),47,38,32,29,29
-447,Nils,45,31,35,26,25
-448,Legendary Fae,40,42,28,37,41
-449,Camilla,37,30,32,28,31
-450,Brave Marth,41,41,43,32,25
-451,Azura (Young),36,33,29,17,25
-452,Hubert,41,39,32,19,25
-453,Brave Tiki (Adult),40,43,27,37,41
-454,Summer Dimitri,40,42,40,35,17
-455,Summer Lorenz,45,32,31,25,29
-456,Bridal Oboro,42,39,35,40,16
-457,Yen'fay,43,37,42,32,28
-458,Young Ike,40,42,42,32,26
-459,Pirate Lifis,47,36,40,30,23
-460,Bridal Lyn,39,28,34,23,24
-461,Tharja,39,32,34,23,20
-462,Summer Robin (F),35,32,34,28,29
-463,Julia,38,35,26,17,32
-464,Summer Takumi,40,35,35,21,19
-465,New Year Fjorm,39,35,35,20,21
-466,Arete,41,36,27,20,34
-467,Catherine,43,39,41,30,23
-468,Athena,36,31,38,27,24
-469,Malice,40,39,43,32,28
-470,Summer Leonie,41,36,39,27,19
-471,New Year Kaden,41,35,39,25,28
-472,Thief Sothe,41,39,41,28,23
-473,Olivia,36,28,33,27,26
-474,Saizo,36,29,34,33,16
-475,Bridal Catria,40,40,41,28,23
-476,Summer Caspar,46,41,36,30,23
-477,Roy,44,30,31,25,28
-478,Raigh,36,32,29,22,29
-479,Legendary Lucina,36,34,35,25,20
-480,Selena (Fates),37,25,35,32,28
-481,Masked Marth,43,34,36,25,19
-482,Jaffar,41,26,33,25,22
-483,Brave Camilla,39,33,37,21,25
-484,Fallen Delthea,41,36,33,19,28
+435,Spring Maria,35,37,40,40,25
+436,Sain,41,42,38,36,18
+437,Est,36,35,30,24,32
+438,Patty,40,41,45,37,24
+439,Winter Zephiel,48,38,19,38,36
+440,Annette,40,39,36,28,30
+441,Halloween Naga,38,42,31,35,37
+442,Nifl,39,38,40,27,23
+443,Ganglöt,40,44,30,38,35
+444,Hugh,40,38,42,27,24
+445,Lilina (LA),34,35,30,20,26
+446,Winter Artur,43,41,19,35,41
+447,Orochi,40,40,24,24,37
+448,Ingrid,37,35,40,28,27
+449,Catherine,43,39,41,30,23
+450,Bridal Oboro,42,39,35,40,16
+451,Summer Leonie,41,36,39,27,19
+452,Camilla,37,30,32,28,31
+453,Pirate Lifis,47,36,40,30,23
+454,Legendary Lucina,36,34,35,25,20
+455,Julia,38,35,26,17,32
+456,Bridal Lyn,39,28,34,23,24
+457,Nils,45,31,35,26,25
+458,Roy,44,30,31,25,28
+459,Athena,36,31,38,27,24
+460,New Year Fjorm,39,35,35,20,21
+461,Brave Marth,41,41,43,32,25
+462,Brave Tiki (Adult),40,43,27,37,41
+463,Raigh,36,32,29,22,29
+464,Summer Caspar,46,41,36,30,23
+465,Young Ike,40,42,42,32,26
+466,Summer Takumi,40,35,35,21,19
+467,New Year Kaden,41,35,39,25,28
+468,Yen'fay,43,37,42,32,28
+469,Summer Robin (F),35,32,34,28,29
+470,Summer Lorenz,45,32,31,25,29
+471,Bridal Catria,40,40,41,28,23
+472,Malice,40,39,43,32,28
+473,Saizo,36,29,34,33,16
+474,Hubert,41,39,32,19,25
+475,Azura (Young),36,33,29,17,25
+476,Summer Dimitri,40,42,40,35,17
+477,Olivia,36,28,33,27,26
+478,Thief Sothe,41,39,41,28,23
+479,Legendary Fae,40,42,28,37,41
+480,Arete,41,36,27,20,34
+481,Tharja,39,32,34,23,20
+482,Atlas (Unit),46,43,37,34,27
+483,Mercedes,39,33,30,22,33
+484,Petra,40,32,38,25,20
 485,Winter Cordelia,40,44,43,33,23
-486,Young Innes,43,37,38,26,27
-487,Summer Noire,36,32,36,27,20
-488,Lilina,35,37,25,19,31
-489,Legendary Xander,40,42,41,35,17
-490,Atlas (Unit),46,43,37,34,27
-491,Eliwood,39,31,30,23,32
-492,Lucina,43,34,36,25,19
-493,Florina,42,29,27,25,34
-494,Ascended Hilda,42,42,43,34,26
-495,Legendary Nanna,40,39,42,27,25
-496,Legendary Dimitri,40,41,41,37,18
-497,Valentine's Veronica,40,36,38,21,22
-498,Brave Eirika,39,40,42,28,24
-499,Cynthia,38,32,37,27,29
-500,Petra,40,32,38,25,20
-501,Hel,40,38,41,30,18
-502,Ninja Cherche,43,44,20,44,32
-503,Navarre,42,31,37,23,24
-504,Ascended Joshua,41,39,43,29,25
-505,Halloween Sophia,37,38,23,27,42
-506,Bridal Charlotte,46,36,32,24,19
-507,Clarisse,37,31,34,25,20
-508,Gregor,40,44,37,43,23
-509,Lethe,41,33,38,26,19
-510,Mercedes,39,33,30,22,33
-511,Marisa,46,30,36,30,21
-512,Young Mia,40,41,43,32,27
-513,Summer Cordelia,41,32,38,28,18
-514,Elincia,35,34,36,24,27
-515,Thrasir,40,33,39,23,27
-516,Bridal Juno,38,36,38,22,26
-517,Ethlyn,38,28,34,26,20
-518,Bridal Fjorm,42,34,34,17,23
-519,Merric,43,26,32,28,19
-520,Shamir,41,40,40,25,24
-521,Legendary Eirika,38,31,39,27,21
-522,Soiree Rinea,38,30,33,23,28
-523,Winter Manuela,42,37,42,38,31
-524,Ninja Camilla,38,43,19,32,40
-525,Astrid,38,39,41,27,23
-526,Aversa,42,33,34,17,24
-527,Matthew,41,25,34,30,18
-528,Reyson,37,29,34,24,26
-529,Apotheosis Anna,38,35,40,28,31
-530,New Year Panne,40,41,44,32,21
-531,Summer Sylvain,42,32,35,27,16
-532,Shanna,39,30,35,25,29
-533,Ninja Hana,42,36,40,28,30
-534,Valentine's Lucina,41,39,42,37,31
-535,Legendary Claude,41,37,41,23,24
-536,Ninja Shamir,42,37,40,31,32
-537,Karla,42,35,40,23,22
-538,Summer Nifl,39,38,43,28,26
-539,Brave Claude,42,36,40,23,25
-540,Summer Camilla,39,33,36,23,19
-541,Summer Ingrid,39,34,42,25,26
-542,Hatari Karla,41,40,42,31,28
-543,Flayn,40,39,27,21,35
-544,Lena,40,32,29,24,37
-545,Scion Nanna,40,35,41,23,27
-546,August,40,40,17,32,43
-547,Ascended Laegjarn,40,39,41,30,18
-548,Jagen,37,27,24,25,35
-549,Leila,40,36,41,23,26
-550,Winter Annette,43,43,23,40,41
-551,Morgan (M),37,33,34,20,26
-552,Brunnya,42,35,31,21,33
-553,New Year Lethe,41,35,41,27,18
-554,New Year Lyre,40,37,42,27,28
-555,Nótt,40,41,40,28,27
-556,New Year Takumi,40,34,34,17,27
-557,Bridal Cordelia,36,35,35,19,22
-558,Ninja Shinon,40,40,43,28,26
-559,Legendary Shez (F),40,43,44,31,25
-560,Wolf,40,39,42,28,20
-561,Gunnthrá,37,31,33,19,25
-562,Eremiya,44,32,35,23,27
-563,Summer Ymir,38,45,18,35,41
-564,Gonzalez,50,42,35,33,21
-565,Veld,43,38,26,22,36
-566,Lilith,39,36,41,27,30
-567,Forrest,39,32,26,19,35
-568,Volke,40,41,43,28,25
-569,Legendary Edelgard,45,42,17,39,36
-570,Halloween Nowi,34,34,32,20,27
-571,Chad,45,30,37,26,23
-572,Halloween Sothis,40,36,42,31,34
-573,Brave Seliph,40,43,41,37,18
-574,Summer Thórr,40,43,16,30,38
-575,Hardin,41,41,44,32,21
-576,Tanya,41,30,37,25,28
-577,Fallen Dimitri,40,42,40,38,17
-578,Surtr,50,39,17,40,33
-579,Winter Sephiran,43,42,21,29,40
-580,Lumera,43,43,43,33,25
-581,Flame Lyn,39,38,44,34,32
-582,Embla,41,43,44,31,24
-583,Alear (M),40,44,45,33,25
-584,New Year Askr,40,42,16,42,37
-585,Genny,32,35,25,21,34
-586,Flora,38,34,23,18,38
-587,Draug,50,30,32,39,18
-588,Legendary Byleth (M),40,39,41,25,21
-589,Hostile Springs Hinoka,38,35,35,16,26
-590,Peri,35,33,33,23,30
-591,Geoffrey,40,46,40,29,25
-592,Spring Veronica,38,35,36,16,25
-593,Summer Claude,41,38,42,25,26
-594,Fallen Muarim,45,43,40,31,23
-595,Hans,46,45,39,35,21
-596,Pirate Hinoka,40,40,40,23,23
-597,Summer Gunnthrá,39,33,37,17,24
-598,Emmeryn,43,32,34,23,30
-599,Kagero,31,35,32,22,28
-600,Valentine's Mist,36,34,34,17,23
-601,Groom Pent,37,33,34,19,21
-602,Sakura,36,28,30,24,30
-603,New Year Dagr,40,41,42,27,22
-604,Bernadetta,38,32,38,22,26
-605,Summer Rhys,44,34,27,21,36
-606,Naesala,39,32,38,24,29
-607,Young Merric,41,34,41,21,25
-608,Valentine's Soren,37,35,33,14,25
-609,Bramimond,39,40,27,21,35
-610,New Year Reginn,37,38,40,23,24
-611,Halloween Rhea,40,43,18,39,42
-612,Claude,39,33,37,20,21
-613,Spring Kagero,36,35,34,18,27
-614,Scion Leif,40,40,41,27,20
-615,New Year Azura,37,30,35,22,26
-616,Summer Caeda,39,33,42,26,28
-617,Tailtiu,39,32,35,17,25
-618,Hilda (Genealogy),41,40,25,24,40
-619,Groom Robin,40,46,35,23,24
-620,Halloween Niles,37,34,39,25,29
-621,Summer Donnel,46,45,31,40,30
-622,Winter Ignatz,42,35,40,31,37
-623,Odin,43,22,32,25,25
-624,Arthur (Genealogy),40,42,41,30,18
-625,Spring Est,39,38,35,17,26
-626,Kliff,37,30,37,25,28
-627,Wind Tribe Fuga,42,46,30,45,30
-628,Sigrun,37,32,36,28,34
-629,Summer Elise,34,36,34,18,25
-630,Natasha,37,36,32,24,36
-631,Diamant,41,46,36,43,21
-632,Medeus,40,44,18,38,43
-633,New Year Fáfnir,40,43,39,31,16
-634,Summer Hilda (Three Houses),39,37,40,20,25
-635,Loki,42,33,35,16,25
-636,Ishtar,38,34,36,17,26
-637,Julius,38,35,27,16,35
-638,Winter Bernadetta,39,36,40,19,23
-639,Alear (F),40,43,46,32,26
-640,Freyr,41,46,16,41,35
-641,Summer Corrin (F),34,31,34,22,26
-642,Halloween Corrin (F),40,42,45,36,30
-643,Azura,36,31,33,21,28
-644,Brave Chrom,41,42,42,37,17
-645,Brave Byleth (F),39,41,43,26,24
-646,Summer Eirika,39,39,42,25,22
-647,Lewyn,38,34,37,17,25
-648,Ogma,47,35,34,28,13
-649,Cyril,46,42,44,35,26
-650,Canas,36,32,29,21,33
-651,Summer Tana,35,33,36,20,25
-652,Brave Lysithea,40,40,39,21,25
+486,Legendary Nanna,40,39,42,27,25
+487,Gregor,40,44,37,43,23
+488,Navarre,42,31,37,23,24
+489,Eliwood,39,31,30,23,32
+490,Florina,42,29,27,25,34
+491,Ascended Hilda,42,42,43,34,26
+492,Brave Camilla,39,33,37,21,25
+493,Selena (Fates),37,25,35,32,28
+494,Lilina,35,37,25,19,31
+495,Ninja Cherche,43,44,20,44,32
+496,Halloween Sophia,37,38,23,27,42
+497,Ascended Joshua,41,39,43,29,25
+498,Lucina,43,34,36,25,19
+499,Young Mia,40,41,43,32,27
+500,Clarisse,37,31,34,25,20
+501,Valentine's Veronica,40,36,38,21,22
+502,Summer Noire,36,32,36,27,20
+503,Hel,40,38,41,30,18
+504,Red Cavalier,43,38,35,30,33
+505,Brave Eirika,39,40,42,28,24
+506,Marisa,46,30,36,30,21
+507,Summer Cordelia,41,32,38,28,18
+508,Fallen Delthea,41,36,33,19,28
+509,Jaffar,41,26,33,25,22
+510,Legendary Xander,40,42,41,35,17
+511,Masked Marth,43,34,36,25,19
+512,Young Innes,43,37,38,26,27
+513,Bridal Charlotte,46,36,32,24,19
+514,Legendary Dimitri,40,41,41,37,18
+515,Cynthia,38,32,37,27,29
+516,Lethe,41,33,38,26,19
+517,Brave Claude,42,36,40,23,25
+518,Matthew,41,25,34,30,18
+519,Legendary Claude,41,37,41,23,24
+520,Ninja Hana,42,36,40,28,30
+521,New Year Panne,40,41,44,32,21
+522,Apotheosis Anna,38,35,40,28,31
+523,August,40,40,17,32,43
+524,Winter Annette,43,43,23,40,41
+525,Ninja Shamir,42,37,40,31,32
+526,Morgan (M),37,33,34,20,26
+527,Winter Manuela,42,37,42,38,31
+528,Summer Camilla,39,33,36,23,19
+529,Reyson,37,29,34,24,26
+530,New Year Lethe,41,35,41,27,18
+531,New Year Lyre,40,37,42,27,28
+532,Astrid,38,39,41,27,23
+533,Jagen,37,27,24,25,35
+534,Karla,42,35,40,23,22
+535,Thrasir,40,33,39,23,27
+536,Soiree Rinea,38,30,33,23,28
+537,Elincia,35,34,36,24,27
+538,Aversa,42,33,34,17,24
+539,Legendary Eirika,38,31,39,27,21
+540,Valentine's Lucina,41,39,42,37,31
+541,Merric,43,26,32,28,19
+542,New Year Takumi,40,34,34,17,27
+543,Shamir,41,40,40,25,24
+544,Nótt,40,41,40,28,27
+545,Ascended Laegjarn,40,39,41,30,18
+546,Ethlyn,38,28,34,26,20
+547,Hatari Karla,41,40,42,31,28
+548,Summer Sylvain,42,32,35,27,16
+549,Bridal Fjorm,42,34,34,17,23
+550,Shanna,39,30,35,25,29
+551,Brunnya,42,35,31,21,33
+552,Summer Nifl,39,38,43,28,26
+553,Flayn,40,39,27,21,35
+554,Leila,40,36,41,23,26
+555,Summer Ingrid,39,34,42,25,26
+556,Bridal Juno,38,36,38,22,26
+557,Ninja Camilla,38,43,19,32,40
+558,Lena,40,32,29,24,37
+559,Ninja Shinon,40,40,43,28,26
+560,Chad,45,30,37,26,23
+561,Legendary Edelgard,45,42,17,39,36
+562,Gunnthrá,37,31,33,19,25
+563,Draug,50,30,32,39,18
+564,Bridal Cordelia,36,35,35,19,22
+565,Forrest,39,32,26,19,35
+566,Tanya,41,30,37,25,28
+567,Lumera,43,43,43,33,25
+568,Surtr,50,39,17,40,33
+569,Lilith,39,36,41,27,30
+570,Fallen Dimitri,40,42,40,38,17
+571,Halloween Sothis,40,36,42,31,34
+572,Eremiya,44,32,35,23,27
+573,Summer Ymir,38,45,18,35,41
+574,Flora,38,34,23,18,38
+575,Legendary Shez (F),40,43,44,31,25
+576,Brave Seliph,40,43,41,37,18
+577,Scion Nanna,40,35,41,23,28
+578,Veld,43,38,26,22,36
+579,Summer Thórr,40,43,16,30,38
+580,Alear (M),40,44,45,33,25
+581,Genny,32,35,25,21,34
+582,Flame Lyn,39,38,44,34,32
+583,New Year Askr,40,42,16,42,37
+584,Volke,40,41,43,28,25
+585,Embla,41,43,44,31,24
+586,Wolf,40,39,42,28,20
+587,Winter Sephiran,43,42,21,29,40
+588,Halloween Nowi,34,34,32,20,27
+589,Hardin,41,41,44,32,21
+590,Gonzalez,50,42,35,33,21
+591,Spring Kagero,36,35,34,18,27
+592,Hilda (Genealogy),41,40,25,24,40
+593,Emmeryn,43,32,34,23,30
+594,Legendary Byleth (M),40,39,41,25,21
+595,Groom Pent,37,33,34,19,21
+596,Sakura,36,28,30,24,30
+597,Claude,39,33,37,20,21
+598,New Year Dagr,40,41,42,27,22
+599,Geoffrey,40,46,40,29,25
+600,Bernadetta,38,32,38,22,26
+601,Summer Caeda,39,33,42,26,28
+602,Summer Rhys,44,34,27,21,36
+603,Naesala,39,32,38,24,29
+604,Young Merric,41,34,41,21,25
+605,Summer Gunnthrá,39,33,37,17,24
+606,Pirate Hinoka,40,40,40,23,23
+607,Bramimond,39,40,27,21,35
+608,Scion Leif,40,40,41,27,20
+609,Halloween Niles,37,34,39,25,29
+610,Summer Claude,41,38,42,25,26
+611,Tailtiu,39,32,35,17,25
+612,Groom Robin,40,46,35,23,24
+613,Fallen Muarim,45,43,40,31,23
+614,Halloween Rhea,40,43,18,39,42
+615,Spring Veronica,38,35,36,16,25
+616,Kagero,31,35,32,22,28
+617,Peri,35,33,33,23,30
+618,Valentine's Soren,37,35,33,14,25
+619,Summer Donnel,46,45,31,40,30
+620,New Year Azura,37,30,35,22,26
+621,Valentine's Mist,36,34,34,17,23
+622,Hans,46,45,39,35,21
+623,Hostile Springs Hinoka,38,35,35,16,26
+624,New Year Reginn,37,38,40,23,24
+625,Ogma,47,35,34,28,13
+626,Elice,40,41,35,27,34
+627,Brave Lysithea,40,40,39,21,25
+628,Natasha,37,36,32,24,36
+629,Eirika,42,26,35,26,28
+630,Solon,45,38,20,24,38
+631,Asbel,40,36,42,21,26
+632,Odin,43,22,32,25,25
+633,Summer Tana,35,33,36,20,25
+634,Arthur (Genealogy),40,42,41,30,18
+635,Brave Chrom,41,42,42,37,17
+636,Winter Bernadetta,39,36,40,19,23
+637,Spring Est,39,38,35,17,26
+638,New Year Fáfnir,40,43,39,31,16
+639,Ishtar,38,34,36,17,26
+640,Summer Corrin (F),34,31,34,22,26
+641,Diamant,41,46,36,43,21
+642,Ullr,39,42,41,30,19
+643,Medeus,40,44,18,38,43
+644,Loki,42,33,35,16,25
+645,Etie,40,45,40,30,28
+646,Tsubasa,39,32,40,26,30
+647,Spring Inigo,40,38,40,22,27
+648,Ylgr,38,33,38,22,20
+649,Cath,41,36,43,27,30
+650,Cyril,46,42,44,35,26
+651,Legault,39,31,38,24,19
+652,Freyr,41,46,16,41,35
 653,Summer Ephraim,41,47,16,44,31
-654,Ullr,39,42,41,30,19
-655,Solon,45,38,20,24,38
-656,Cath,41,36,43,27,30
-657,Elice,40,41,35,27,34
-658,Legault,39,31,38,24,19
-659,Asbel,40,36,42,21,26
-660,Summer Shez (M),41,44,44,31,23
-661,Spring Inigo,40,38,40,22,27
-662,Ylgr,38,33,38,22,20
-663,Etie,40,45,40,30,28
-664,Eirika,42,26,35,26,28
-665,Summer Laegjarn,37,34,37,20,21
-666,Brave Robin (M),40,46,45,35,27
-667,Tsubasa,39,32,40,26,30
-668,Adrift Camilla,36,37,30,17,30
-669,Halloween Mia,36,30,34,22,28
-670,Annand,37,35,39,27,34
-671,Lysithea,37,41,37,21,24
-672,Riev,43,39,25,23,40
-673,Performing Inigo,37,28,33,22,20
-674,Spring Catria,36,32,35,18,23
-675,Sully,42,26,34,24,28
-676,Titania,37,28,34,25,30
-677,Gangrel,45,32,38,24,27
-678,Valentine's Robin (F),42,41,16,39,42
-679,Eirika (SM),36,31,35,20,22
-680,Legendary Ninian,44,37,41,22,24
-681,Fallen Byleth (F),40,44,47,32,25
-682,Rebecca,37,29,34,21,27
-683,Halloween Robin (M),46,43,21,43,37
-684,Ewan,38,37,33,23,35
-685,Rearmed Alcryst,39,43,46,30,24
-686,Gotoh,40,42,14,38,42
-687,Freyja,40,38,44,24,22
+654,Julius,38,35,27,16,35
+655,Sigrun,37,32,36,28,34
+656,Brave Robin (M),40,46,45,35,27
+657,Lewyn,38,34,37,17,25
+658,Brave Byleth (F),39,41,43,26,24
+659,Halloween Corrin (F),40,42,45,36,30
+660,Azura,36,31,33,21,28
+661,Wind Tribe Fuga,42,46,30,45,30
+662,Kliff,37,30,37,25,28
+663,Summer Hilda (Three Houses),39,37,40,20,25
+664,Winter Ignatz,42,35,40,31,37
+665,Canas,36,32,29,21,33
+666,Summer Laegjarn,37,34,37,20,21
+667,Alear (F),40,43,46,32,26
+668,Summer Eirika,39,39,42,25,22
+669,Summer Elise,34,36,34,18,25
+670,Summer Shez (M),41,44,44,31,23
+671,Annand,37,35,39,27,34
+672,Gangrel,45,32,38,24,27
+673,Legendary Ninian,44,37,41,22,24
+674,Lysithea,37,41,37,21,24
+675,Freyja,40,38,44,24,22
+676,Halloween Mia,36,30,34,22,28
+677,Spring Catria,36,32,35,18,23
+678,Legendary Julia,40,39,28,19,36
+679,Halloween Robin (M),46,43,21,43,37
+680,Sully,42,26,34,24,28
+681,Adrift Camilla,36,37,30,17,30
+682,Valentine's Robin (F),42,41,16,39,42
+683,Rearmed Alcryst,39,43,46,30,24
+684,Fallen Byleth (F),40,44,47,32,25
+685,Ewan,38,37,33,23,35
+686,Rebecca,37,29,34,21,27
+687,Eirika (SM),36,31,35,20,22
 688,Lloyd,41,32,35,20,30
-689,Legendary Julia,40,39,28,19,36
-690,Murdock,47,45,23,45,35
-691,Thief Leila,40,38,43,20,24
-692,Valentine's Effie,43,46,43,32,23
-693,Winter Sothis,44,35,41,30,35
-694,Ludveck,46,44,32,45,28
-695,Cornelia,42,46,23,26,40
-696,Wrys,42,24,23,22,36
-697,Hostile Springs Camilla,38,33,35,17,28
-698,Valentine's Gustav,49,41,18,46,31
-699,Cervantes,50,45,31,44,25
-700,Halloween Henry,36,33,34,26,36
-701,Bridal Tiki,42,42,26,40,45
-702,Ascended Fir,42,44,46,34,21
-703,Spring Palla,38,37,34,17,29
-704,Lyn,37,28,37,26,29
-705,Virion,46,31,31,26,13
-706,Karin,41,37,42,26,31
-707,Spring Lucina,35,29,36,22,25
-708,Legendary Lyn,36,31,36,21,27
-709,Picnic Genny,35,36,24,14,34
-710,Peony,38,31,36,16,24
-711,Setsuna,37,28,37,22,23
-712,Fallen Linus,42,46,43,36,20
-713,Lyn (LA),37,31,36,27,34
-714,Legendary Byleth (F),40,39,43,23,26
-715,Bridal Larum,38,32,40,26,31
-716,Bridal Micaiah,39,39,20,19,38
-717,Yuri,40,39,43,26,29
-718,Picnic Felicia,43,30,37,30,35
-719,Arion,41,45,36,46,21
-720,Sue,36,32,38,23,20
-721,Young Boyd,50,43,36,31,21
-722,Summer Lyn,37,33,38,20,27
-723,Masquerade Lachesis,37,37,27,19,37
-724,Ninja Lyn,40,38,42,21,26
-725,Legion,46,36,35,22,18
-726,Ascended Idunn,45,43,26,43,38
-727,Ninian,42,24,33,23,27
-728,Summer Freyja,40,39,43,25,20
-729,Micaiah,35,35,28,18,35
-730,Winter Nino,40,35,41,22,31
-731,Performing Azura,35,32,34,20,28
-732,Hoshidan Summer Micaiah,33,34,20,18,34
-733,Karel,47,30,35,25,20
-734,Maribelle,34,35,33,16,27
-735,Spring Severa,39,37,40,24,17
-736,Legendary Celica,40,38,38,18,28
-737,Valentine's Hana,40,42,46,41,27
-738,Dwyer,40,37,35,25,39
-739,Vigarde,46,47,30,44,29
-740,Kronya,44,31,39,22,26
-741,Gaius,42,29,36,22,19
-742,Winter Black Knight,43,44,44,35,30
-743,Bridal Sigrun,35,31,38,27,31
-744,Mae,35,36,31,16,30
-745,Pirate Naesala,42,39,43,23,25
-746,Summer Selena,36,37,37,17,23
-747,Hoshidan Summer Ryoma,36,32,34,21,17
-748,Bridal Cecilia,40,41,25,18,38
-749,Díthorba,43,35,38,23,33
-750,Say'ri,40,35,40,23,34
-751,Summer Elincia,38,36,40,25,33
-752,Halloween Corrin (M),44,44,21,44,39
-753,Anna,41,29,38,22,28
-754,New Year Ash,41,44,19,44,40
-755,Felix,40,46,46,31,25
-756,Caeldori,39,40,44,30,31
-757,Summer Ursula,36,36,34,16,28
-758,Soiree Ishtar,36,34,36,16,22
-759,Luthier,43,37,36,20,30
-760,Zephia,41,40,44,23,24
-761,Morgan (F),37,34,30,16,33
-762,Fallen Anankos,42,43,44,36,31
-763,Legendary Caeda,39,38,43,27,31
-764,Miriel,37,37,40,25,31
-765,Harmonized Mia,38,35,41,17,25
-766,Soren,36,33,33,17,29
-767,Rearmed Robin (F),43,41,44,35,33
-768,Brave Veronica,36,32,36,21,19
-769,Nanna,36,27,34,21,26
-770,Halloween Xane,47,30,34,25,30
-771,Mist,39,27,28,20,34
-772,Thief Cath,39,37,43,21,22
-773,Plegian Dorothea,37,38,35,16,26
-774,Bridal Louise,39,31,34,17,30
-775,Dedue,50,45,17,45,28
-776,Sanaki,33,37,26,17,34
-777,Lene,35,28,35,23,28
-778,Winter Bruno,43,41,38,29,34
-779,Priscilla,36,29,29,19,32
-780,Summer Lilina,35,38,25,16,35
-781,Shez (F),38,41,42,32,34
-782,Selena (Sacred Stones),40,39,39,16,23
-783,Nino,33,33,36,19,26
-784,Nerþuz,40,42,47,30,20
-785,Plegian Tharja,40,39,41,19,22
-786,Summer Leo,37,32,27,16,35
-787,Brave Lyn,35,33,35,18,28
-788,Saias,36,33,30,18,34
-789,Gatrie,47,42,17,44,35
-790,Khadein Byleth (M),40,42,44,25,26
-791,Triandra,38,37,38,16,22
-792,Bridal Shanna,37,38,42,23,27
-793,Nino (SF),36,33,38,17,25
-794,Halloween Anna,40,44,47,31,27
-795,Summer Lute,37,35,34,17,32
-796,Summer Mercedes,38,39,25,17,38
-797,Erk,45,35,39,19,27
-798,New Year Peony,38,34,40,16,23
-799,Hostile Springs Elise,34,33,37,18,22
-800,Ninja Corrin (F),38,41,40,23,20
-801,Spring Ashe,40,43,46,32,17
-802,Wind Tribe Dagr,41,45,46,30,22
-803,Hatari Azura,37,37,39,16,23
-804,Miranda,38,36,35,21,36
-805,Deirdre,36,33,28,16,35
-806,Young Caeda,36,33,42,25,30
-807,Fallen Lilith,39,40,43,29,33
-808,Yune,38,33,27,15,37
-809,Mathilda,35,29,32,24,34
-810,Colm,43,36,41,24,32
-811,Bridal Say'ri,40,44,46,28,26
-812,Ricken,40,43,39,24,30
-813,Pent,40,38,39,19,30
-814,Spring Sonya,40,42,41,23,20
-815,Ascended Fjorm,43,39,41,31,36
-816,Flame Tana,39,39,42,26,32
-817,Rearmed Ingrid,38,44,47,30,25
-818,Summer Linde,33,34,35,16,26
-819,Monica,40,38,43,24,31
-820,Lugh,37,35,36,17,31
-821,Hinoka (WF),37,32,35,17,29
-822,Bridal Sanaki,35,36,30,16,33
-823,Rearmed Ophelia,39,44,36,25,32
-824,Knoll,43,37,32,19,35
-825,Spring Michalis,43,45,32,47,17
-826,Noah,40,45,45,31,18
-827,Linde,35,35,36,14,27
-828,Masquerade Sigurd,38,38,18,16,37
-829,Lucia,40,41,45,29,32
-830,Arden,60,36,16,41,16
-831,Rearmed Eitr,40,44,46,33,16
-832,Tine,38,42,42,23,26
-833,Hoshidan Summer Elincia,34,29,35,20,21
-834,Bridal Flavia,41,44,45,31,18
-835,Pelleas,43,40,36,21,31
-836,Olwen (WT),34,30,35,19,27
-837,New Year Eir,39,31,36,21,34
-838,Brave Micaiah,36,37,28,17,37
-839,Ced,37,35,39,19,31
-840,Fallen Julia,39,41,24,17,40
-841,L'Arachel,33,33,31,17,31
-842,Summer Dorothea,38,37,36,16,30
-843,Ascended Celica,40,43,42,21,25
-844,Gilliam,47,44,21,48,35
-845,Teatime Ayra,40,44,46,32,17
-846,Valentine's Takumi,40,40,46,28,31
-847,Summer Byleth (F),40,36,42,16,21
-848,Ninja Igrene,40,43,38,22,30
-849,Legendary Azura,33,30,35,17,24
-850,Lon'qu,45,29,39,22,22
-851,Ursula,35,29,32,19,30
-852,Sonya,36,33,31,15,32
-853,Brave Edelgard,46,45,16,43,35
-854,Fir,41,25,36,24,31
-855,Arvis,33,34,31,17,33
-856,Plumeria,41,40,18,16,37
-857,Pirate Surtr,45,45,16,44,36
-858,Lapis,41,41,45,29,32
-859,Ascended Florina,39,37,43,22,31
-860,Bridal Ninian,34,28,33,18,27
-861,Fallen Rhea,46,43,18,40,43
-862,Winter Lysithea,38,42,40,19,23
-863,Clarine,35,25,33,22,29
-864,Halloween Kellam,48,46,31,48,27
-865,Serra,33,30,31,21,33
-866,New Year Elm,41,40,45,27,31
-867,Halloween Seadall,40,40,46,21,25
-868,Valentine's Titania,35,30,33,17,30
-869,Summer Shez (F),40,46,45,30,18
-870,Tethys,38,27,35,23,34
-871,Vanessa,39,40,43,27,34
-872,Spring Sharena,37,32,36,16,30
-873,Arval,40,44,27,23,43
-874,Aelfric,43,40,31,20,37
-875,Young Eliwood,39,45,46,29,20
-876,Halloween Timerra,37,41,46,46,23
-877,Heiðr (Unit),38,45,45,29,20
-878,Hapi,40,42,26,16,39
-879,Merlinus,50,20,35,31,27
-880,Silvia,40,27,36,17,30
-881,Summer Fjorm,43,43,46,28,28
-882,Rhea,40,44,16,42,46
-883,Legendary Alear (F),40,41,47,33,37
-884,Dorothy,40,46,43,25,28
-885,Summer Gaius,34,30,37,19,28
-886,Ascended Tiki (Young),38,42,44,32,36
-887,Fallen Edelgard,45,42,14,44,39
-888,Summer Edelgard,46,45,17,43,39
-889,Summer Shamir,40,43,46,25,20
-890,Larum,37,32,39,18,30
-891,Masquerade Ethlyn,37,36,41,16,28
-892,Nyna,40,34,41,23,38
-893,Halloween Dheginsea,45,45,14,41,39
-894,Legendary Lilina,39,42,21,16,40
-895,Clair,37,26,36,24,33
-896,New Year Plumeria,41,42,17,18,39
-897,Rearmed Chrom,41,45,46,29,18
-898,Lucius,37,32,30,13,35
-899,Scion Lewyn,40,38,40,19,34
+689,Performing Inigo,37,28,33,22,20
+690,Gotoh,40,42,14,38,42
+691,Titania,37,28,34,25,30
+692,Riev,43,39,25,23,40
+693,Micaiah,35,35,28,18,35
+694,Summer Lyn,37,33,38,20,27
+695,Bridal Micaiah,39,39,20,19,38
+696,Fallen Linus,42,46,43,36,20
+697,Spring Lucina,35,29,36,22,25
+698,Valentine's Effie,43,46,43,32,23
+699,Young Boyd,50,43,36,31,21
+700,Spring Severa,39,37,40,24,17
+701,Maribelle,34,35,33,16,27
+702,Winter Nino,40,35,41,22,31
+703,Halloween Henry,36,33,34,26,36
+704,Legion,46,36,35,22,18
+705,Lyn (LA),37,31,36,27,34
+706,Murdock,47,45,23,45,35
+707,Summer Freyja,40,39,43,25,20
+708,Lyn,37,28,37,26,29
+709,Karel,47,30,35,25,20
+710,Ascended Fir,42,44,46,34,21
+711,Bridal Tiki,42,42,26,40,45
+712,Masquerade Lachesis,37,37,27,19,37
+713,Hostile Springs Camilla,38,33,35,17,28
+714,Legendary Lyn,36,31,36,21,27
+715,Wrys,42,24,23,22,36
+716,Hoshidan Summer Micaiah,33,34,20,18,34
+717,New Year Peony,40,34,40,16,23
+718,Ninja Lyn,40,38,42,21,26
+719,Winter Sothis,44,35,41,30,35
+720,Arion,41,45,36,46,21
+721,Setsuna,37,28,37,22,23
+722,Picnic Genny,35,36,24,14,34
+723,Peony,38,31,36,16,24
+724,Performing Azura,35,32,34,20,28
+725,Karin,41,37,42,26,31
+726,Ludveck,46,44,32,45,28
+727,Valentine's Gustav,49,41,18,46,31
+728,Cornelia,42,46,23,26,40
+729,Bridal Larum,38,32,40,26,31
+730,Picnic Felicia,43,30,37,30,35
+731,Sue,36,32,38,23,20
+732,Legendary Byleth (F),40,39,43,23,26
+733,Ascended Idunn,45,43,26,43,38
+734,Yuri,40,39,43,26,29
+735,Virion,46,31,31,26,13
+736,Spring Palla,38,37,34,17,29
+737,Ninian,42,24,33,23,27
+738,Cervantes,50,45,31,44,25
+739,Díthorba,43,35,38,23,33
+740,Luthier,43,37,36,20,30
+741,Dwyer,40,37,35,25,39
+742,Hoshidan Summer Ryoma,36,32,34,21,17
+743,Anna,41,29,38,22,28
+744,Zephia,41,40,44,23,24
+745,Halloween Xane,47,30,34,25,30
+746,Mae,35,36,31,16,30
+747,Harmonized Mia,38,35,41,17,25
+748,Summer Selena,36,37,37,17,23
+749,Legendary Celica,40,38,38,18,28
+750,Mist,39,27,28,20,34
+751,Caeldori,39,40,44,30,31
+752,Bridal Sigrun,35,31,38,27,31
+753,Summer Ursula,36,36,34,16,28
+754,Felix,40,46,46,31,25
+755,Miriel,37,37,40,25,31
+756,Gaius,42,29,36,22,19
+757,Soiree Ishtar,36,34,36,16,22
+758,Halloween Corrin (M),44,44,21,44,39
+759,Nanna,36,27,34,21,26
+760,Thief Cath,39,37,43,21,22
+761,Summer Elincia,38,36,40,25,33
+762,Thief Leila,40,38,43,20,25
+763,Rearmed Robin (F),43,41,44,35,33
+764,Morgan (F),37,34,30,16,33
+765,Say'ri,40,35,40,23,34
+766,Plegian Dorothea,37,38,35,16,26
+767,Bridal Cecilia,40,41,25,18,38
+768,Fallen Anankos,42,43,44,36,31
+769,Pirate Naesala,42,39,43,23,25
+770,Winter Black Knight,43,44,44,35,30
+771,Valentine's Hana,40,42,46,41,27
+772,Brave Veronica,36,32,36,21,19
+773,Vigarde,46,47,30,44,29
+774,Kronya,44,31,39,22,26
+775,New Year Ash,41,44,19,44,40
+776,Soren,36,33,33,17,29
+777,Legendary Caeda,39,38,43,27,31
+778,Halloween Anna,40,44,47,31,27
+779,Shez (F),38,41,42,32,34
+780,Khadein Byleth (M),40,42,44,25,26
+781,Gatrie,47,42,17,44,35
+782,Brave Lyn,35,33,35,18,28
+783,Sanaki,33,37,26,17,34
+784,Summer Lilina,35,38,25,16,35
+785,Summer Leo,37,32,27,16,35
+786,Erk,45,35,39,19,27
+787,Bridal Shanna,37,38,42,23,27
+788,Bridal Louise,39,31,34,17,30
+789,Selena (Sacred Stones),40,39,39,16,23
+790,Priscilla,36,29,29,19,32
+791,Nino (SF),36,33,38,17,25
+792,Nino,33,33,36,19,26
+793,Summer Mercedes,38,39,25,17,38
+794,Dedue,50,45,17,45,28
+795,Lene,35,28,35,23,28
+796,Nerþuz,40,42,47,30,20
+797,Summer Lute,37,35,34,17,32
+798,Winter Bruno,43,41,38,29,34
+799,Plegian Tharja,40,39,41,19,22
+800,Saias,36,33,30,18,34
+801,Triandra,38,37,38,16,22
+802,Hatari Azura,37,37,39,16,23
+803,Rearmed Ophelia,39,44,36,25,32
+804,Hostile Springs Elise,34,33,37,18,22
+805,Ninja Corrin (F),38,41,40,23,20
+806,Ricken,40,43,39,24,30
+807,Bridal Sanaki,35,36,30,16,33
+808,Rearmed Ingrid,38,44,47,30,25
+809,Deirdre,36,33,28,16,35
+810,Knoll,43,37,32,19,35
+811,Mathilda,35,29,32,24,34
+812,Ascended Fjorm,43,39,41,31,36
+813,Wind Tribe Dagr,41,45,46,30,22
+814,Lugh,37,35,36,17,31
+815,Pent,40,38,39,19,30
+816,Summer Linde,33,34,35,16,26
+817,Fallen Lilith,39,40,43,29,33
+818,Yune,38,33,27,15,37
+819,Young Caeda,36,33,42,25,30
+820,Monica,40,38,43,24,31
+821,Miranda,38,36,35,21,36
+822,Colm,43,36,41,24,32
+823,Spring Sonya,40,42,41,23,20
+824,Spring Ashe,40,43,46,32,17
+825,Bridal Say'ri,40,44,46,28,26
+826,Flame Tana,39,39,42,26,32
+827,Spring Michalis,43,45,32,47,17
+828,Hinoka (WF),37,32,35,17,29
+829,Lon'qu,45,29,39,22,22
+830,Hoshidan Summer Elincia,34,29,35,20,21
+831,Teatime Ayra,40,44,46,32,17
+832,Lucia,40,41,45,29,32
+833,Tine,38,42,42,23,26
+834,Legendary Azura,33,30,35,17,24
+835,Brave Micaiah,36,37,28,17,37
+836,Summer Byleth (F),40,36,42,16,21
+837,Summer Dorothea,38,37,36,16,30
+838,Rearmed Eitr,40,44,46,33,16
+839,Noah,40,45,45,31,18
+840,Brave Edelgard,46,45,16,43,35
+841,Arden,60,36,16,41,16
+842,New Year Eir,39,31,36,21,34
+843,Valentine's Takumi,40,40,46,28,31
+844,Ced,37,35,39,19,31
+845,Masquerade Sigurd,38,38,18,16,37
+846,Ascended Celica,40,43,42,21,25
+847,Olwen (WT),34,30,35,19,27
+848,Linde,35,35,36,14,27
+849,Ursula,35,29,32,19,30
+850,Ninja Igrene,40,43,38,22,30
+851,Sonya,36,33,31,15,32
+852,Gilliam,47,44,21,48,35
+853,Bridal Flavia,41,44,45,31,18
+854,L'Arachel,33,33,31,17,31
+855,Pelleas,43,40,36,21,31
+856,Fir,41,25,36,24,31
+857,Fallen Julia,39,41,24,17,40
+858,Arvis,33,34,31,17,33
+859,Clarine,35,25,33,22,29
+860,Pirate Surtr,45,45,16,44,36
+861,Ascended Florina,39,37,43,22,31
+862,New Year Elm,41,40,45,27,31
+863,Plumeria,41,40,18,16,37
+864,Fallen Rhea,46,43,18,40,43
+865,Winter Lysithea,38,42,40,19,23
+866,Bridal Ninian,34,28,33,18,27
+867,Halloween Kellam,48,46,31,48,27
+868,Lapis,41,41,45,29,32
+869,Serra,33,30,31,21,33
+870,Halloween Seadall,40,40,46,21,25
+871,Halloween Timerra,37,41,46,46,23
+872,Tethys,38,27,35,23,34
+873,Merlinus,50,20,35,31,27
+874,Hapi,40,42,26,16,39
+875,Summer Shez (F),40,46,45,30,18
+876,Teatime Ferdinand,40,42,45,21,25
+877,Valentine's Titania,35,30,33,17,30
+878,Arval,40,44,27,23,43
+879,Heiðr (Unit),38,45,45,29,20
+880,Young Eliwood,39,45,46,29,20
+881,Vanessa,39,40,43,27,34
+882,Spring Sharena,37,32,36,16,30
+883,Aelfric,43,40,31,20,37
+884,Rhea,40,44,16,42,46
+885,Summer Fjorm,43,43,46,28,28
+886,Summer Shamir,40,43,46,25,20
+887,Dorothy,40,46,43,25,28
+888,Summer Gaius,34,30,37,19,28
+889,Ascended Tiki (Young),38,42,44,32,36
+890,Nyna,40,34,41,23,38
+891,Silvia,40,27,36,17,30
+892,Fallen Edelgard,45,42,14,44,39
+893,Masquerade Ethlyn,37,36,41,16,28
+894,Larum,37,32,39,18,30
+895,Summer Edelgard,46,45,17,43,39
+896,Legendary Alear (F),40,41,47,33,37
+897,Clair,37,26,36,24,33
+898,Legendary Lilina,39,42,21,16,40
+899,Halloween Dheginsea,45,45,14,41,39
 900,Lute,33,36,32,16,34
-901,Young L'Arachel,36,37,38,16,30
-902,Elise,30,32,32,19,32
-903,Plegian Katarina,39,37,43,16,28
-904,Innes,35,33,34,14,31
-905,Halloween Duma,47,46,19,40,43
-906,Maria,36,27,34,19,32
-907,Bridal Anna,38,43,46,22,25
-908,Spring Karla,40,45,47,24,22
-909,Fiora,38,32,38,21,37
+901,Rearmed Chrom,41,45,46,29,18
+902,Innes,35,33,34,14,31
+903,Halloween Duma,47,46,19,40,43
+904,Young L'Arachel,36,37,38,16,30
+905,Elise,30,32,32,19,32
+906,Plegian Katarina,39,37,43,16,28
+907,Scion Lewyn,40,38,40,19,34
+908,Lucius,37,32,30,13,35
+909,New Year Plumeria,41,42,17,18,39
 910,Ilyana,39,38,32,17,40
-911,Halloween Nils,44,35,41,21,35
-912,Performing Olivia,34,28,34,16,28
-913,Brave Gullveig,40,45,47,27,19
+911,Brave Gullveig,40,45,47,27,19
+912,Maria,36,27,34,19,32
+913,Legendary Yuri,41,44,47,24,26
 914,Olwen,34,26,34,20,30
-915,Legendary Yuri,41,44,47,24,26
-916,Tatiana,40,37,34,15,39
-917,Brave Corrin (F),42,40,46,37,40
-918,Summer Micaiah,38,42,30,16,37
-919,Nina,35,32,37,16,31
-920,Bridal Lilina,39,44,22,16,42
-921,Winter Dorothea,36,41,41,16,25
-922,Rearmed Tana,40,45,47,22,23
-923,Wind Tribe Claude,42,44,47,24,26
-924,Salem,41,38,36,18,38
-925,Katarina,34,32,34,15,32
-926,Nyx,36,42,40,19,28
-927,Legendary Veronica,38,42,45,19,25
-928,Legendary Hinoka,40,46,46,23,22
-929,Constance,39,42,40,17,29
-930,Delthea,33,36,34,13,31
-931,Phila,38,37,42,26,40
-932,Young Ilyana,40,41,30,18,42
-933,Hatari Xane,47,30,36,23,35
-934,Khadein Ursula,40,42,46,18,22
-935,Bridal Caeda,33,29,37,19,30
-936,Neimi,39,39,42,21,35
-937,Spring Bernadetta,39,43,47,20,25
-938,Febail,40,46,45,26,31
-939,Chloé,36,38,40,28,42
-940,Valentian Est,35,41,38,25,37
-941,Thief Nina,38,37,43,18,32
-942,Wind Tribe Catria,39,45,45,25,30
-943,Caeda,36,25,37,24,34
-944,Groom Saul,37,33,37,16,35
-945,Citrinne,38,46,27,22,44
-946,Young Mark,40,44,27,20,46
-947,Bastian,40,44,28,20,45
-948,Teatime Tailtiu,39,42,44,21,31
-949,New Year Anna,40,34,40,16,37
-950,Legendary Micaiah,38,42,31,19,41
-951,Seiðr,39,43,30,17,40
-952,Scion Julia,39,42,35,16,35
-953,Charlotte,48,43,41,25,18
-954,Summer Ivy,38,46,25,20,44
+915,Bridal Anna,38,43,46,22,25
+916,Spring Karla,40,45,47,24,22
+917,Fiora,38,32,38,21,37
+918,Performing Olivia,34,28,34,16,28
+919,Halloween Nils,44,35,41,21,35
+920,Tatiana,40,37,34,15,39
+921,Delthea,33,36,34,13,31
+922,Katarina,34,32,34,15,32
+923,Young Ilyana,40,41,30,18,42
+924,Nina,35,32,37,16,31
+925,Rearmed Tana,40,45,47,22,23
+926,Hatari Xane,47,30,36,23,35
+927,Nyx,36,42,40,19,28
+928,Salem,41,38,36,18,38
+929,Winter Dorothea,36,41,41,16,25
+930,Summer Micaiah,38,42,30,16,37
+931,Constance,39,42,40,17,29
+932,Brave Corrin (F),42,40,46,37,40
+933,Bridal Lilina,39,44,22,16,42
+934,Legendary Hinoka,40,46,46,23,22
+935,Wind Tribe Claude,42,44,47,24,26
+936,Legendary Veronica,38,42,45,19,25
+937,Phila,38,37,42,26,40
+938,Caeda,36,25,37,24,34
+939,Wind Tribe Catria,39,45,45,25,30
+940,Groom Saul,37,33,37,16,35
+941,Bridal Caeda,33,29,37,19,30
+942,Neimi,39,39,42,21,35
+943,Spring Bernadetta,39,43,47,20,25
+944,Khadein Ursula,40,42,46,18,22
+945,Chloé,36,38,40,28,42
+946,Febail,40,46,45,26,31
+947,Valentian Est,35,41,38,25,37
+948,Thief Nina,38,37,43,18,32
+949,Legendary Micaiah,38,42,31,19,41
+950,Summer Ivy,38,46,25,20,44
+951,New Year Anna,40,34,40,16,37
+952,Bastian,40,44,28,20,45
+953,Citrinne,38,46,27,22,44
+954,Seiðr,39,43,30,17,40
 955,Eir,35,32,37,14,31
-956,Summer Tharja,40,45,44,19,20
-957,Ascended Ishtar,40,41,43,17,31
-958,Ascended Ced,43,45,46,22,26
-959,Halloween Sakura,33,32,34,14,34
-960,Niles,37,25,34,17,34
-961,Legendary Deirdre,40,43,32,19,43
-962,Spring Delthea,36,43,40,16,28
+956,Young Mark,40,44,27,20,46
+957,Charlotte,48,43,41,25,18
+958,Scion Julia,39,42,35,16,35
+959,Teatime Tailtiu,39,42,44,21,31
+960,Summer Tharja,40,45,44,19,20
+961,Ascended Ced,43,45,46,22,26
+962,Ascended Ishtar,40,41,43,17,31
 963,Marianne,36,41,32,17,39
-964,Kaze,34,30,36,17,34
-965,Teatime Lysithea,38,46,46,20,22
-966,Selkie,35,29,38,19,35
-967,Young Hector,47,45,16,47,41
-968,Louise,41,37,42,16,36
-969,Pirate Vika,41,34,40,17,40
-970,Groom Rafiel,38,28,35,20,41
-971,Wind Tribe Kagero,43,47,45,20,23
-972,Rearmed Plumeria,40,46,18,19,45
-973,Ascended Elincia,38,44,45,18,28
-974,Young Rebecca,39,44,45,22,33
-975,Guinivere,36,35,40,16,38
-976,Fallen Ninian,45,27,40,23,36
+964,Legendary Deirdre,40,43,32,19,43
+965,Spring Delthea,36,43,40,16,28
+966,Niles,37,25,34,17,34
+967,Kaze,34,30,36,17,34
+968,Halloween Sakura,33,32,34,14,34
+969,Groom Rafiel,38,28,35,20,41
+970,Rearmed Plumeria,40,46,18,19,45
+971,Teatime Lysithea,38,46,46,20,22
+972,Young Hector,47,45,16,47,41
+973,Selkie,35,29,38,19,35
+974,Wind Tribe Kagero,43,47,45,20,23
+975,Louise,41,37,42,16,36
+976,Pirate Vika,41,34,40,17,40
 977,Brave Marianne,38,40,41,17,35
 978,Fomortiis,46,44,15,46,44
-979,Khadein Nino,38,41,46,20,32
-980,Leanne,36,27,37,16,34
-981,Fee,37,40,45,26,40
-982,Halloween Flayn,38,46,26,18,46
-983,Ashera,37,35,39,15,40
-984,Sara,35,40,37,16,37
-985,Valentine's Elise,37,43,46,16,27
-986,Ronan,38,34,40,17,42
-987,Legendary Elincia,40,45,47,23,34
+979,Fallen Ninian,45,27,40,23,36
+980,Ascended Elincia,38,44,45,18,28
+981,Khadein Nino,38,41,46,20,32
+982,Young Rebecca,39,44,45,22,33
+983,Guinivere,36,35,40,16,38
+984,Ashera,37,35,39,15,40
+985,Leanne,36,27,37,16,34
+986,Fee,37,40,45,26,40
+987,Halloween Flayn,38,46,26,18,46
 988,Khadein Linde,37,44,45,16,27
-989,Spring Triandra,37,43,46,18,18
-990,Elimine,36,34,40,16,41
-991,Niime,36,42,33,17,43
-992,Khadein Soren,38,43,34,18,45
-993,New Year Selkie,35,31,39,16,40
-994,Summer L'Arachel,37,46,44,16,30
-995,Syrene,37,39,45,21,41
-996,Young Soren,36,42,34,16,43
-997,Felicia,34,23,37,18,35
-998,Young Lucius,38,45,31,17,47
-999,Valentine's Leo,37,45,31,16,45
-1000,Céline,37,41,44,17,38
-1001,Brave Soren,40,45,34,16,47
-1002,Teatime Ferdinand,40,42,45,1,25
-1003,Legendary Guinivere,37,39,45,16,40
-1004,Ascended Eir,35,42,45,16,35
-1005,Fallen Maria,37,44,45,16,35
+989,Valentine's Elise,37,43,46,16,27
+990,Legendary Elincia,40,45,47,23,34
+991,Sara,35,40,37,16,37
+992,Spring Triandra,37,43,46,18,18
+993,Ronan,36,34,40,17,42
+994,Elimine,36,34,40,16,41
+995,Niime,36,42,33,17,43
+996,Khadein Soren,38,43,34,18,45
+997,Young Soren,36,42,34,16,43
+998,Syrene,37,39,45,21,41
+999,Summer L'Arachel,37,46,44,16,30
+1000,New Year Selkie,35,31,39,16,40
+1001,Felicia,34,23,37,18,35
+1002,Valentine's Leo,37,45,31,16,45
+1003,Young Lucius,38,45,31,17,47
+1004,Céline,37,41,44,17,38
+1005,Brave Soren,40,45,34,16,47
 1006,Saul,37,40,44,16,40
+1007,Ascended Eir,35,42,45,16,35
+1008,Legendary Guinivere,37,39,45,16,40
+1009,Fallen Maria,37,44,45,16,35
